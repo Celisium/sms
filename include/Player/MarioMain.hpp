@@ -47,6 +47,7 @@ class TMario : public TTakeActor {
         void throwMario(const JGeometry::TVec3<f32>&, f32);
         u32 askJumpIntoWaterEffectExist() const;
 
+        virtual void receiveMessage(THitActor*, unsigned long);
 
         u32 _070;
         u32 input;

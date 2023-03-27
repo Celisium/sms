@@ -102,7 +102,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JDRSmJ3DScn.o                            \
     $(BUILD_DIR)/asm/JSystem/JDRVideo.o                               \
     $(BUILD_DIR)/asm/JSystem/JDRViewConnecter.o                       \
-    $(BUILD_DIR)/asm/JSystem/JDRViewObj.o                             \
+    $(BUILD_DIR)/src/JSystem/JDRViewObj.o                             \
     $(BUILD_DIR)/asm/JSystem/JDRViewport.o                            \
     $(BUILD_DIR)/asm/JSystem/JADHioNode.o                             \
     $(BUILD_DIR)/asm/JSystem/JALCalc.o                                \

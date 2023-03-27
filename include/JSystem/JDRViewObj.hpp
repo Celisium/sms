@@ -8,9 +8,17 @@
 
 namespace JDrama {
 
+class TGraphics;
+
 class TViewObj : public TNameRef {
+	
 	public:
-	u32 _00C;
+
+	void testPerform(u32, TGraphics*);
+	virtual void perform(u32, TGraphics*);
+
+	u16 unknown_0C;
+
 };
 
 };
