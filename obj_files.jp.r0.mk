@@ -92,7 +92,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JDRFrmGXSet.o                            \
     $(BUILD_DIR)/asm/JSystem/JDRGraphics.o                            \
     $(BUILD_DIR)/asm/JSystem/JDRLighting.o                            \
-    $(BUILD_DIR)/asm/JSystem/JDRNameRef.o                             \
+    $(BUILD_DIR)/src/JSystem/JDRNameRef.o                             \
     $(BUILD_DIR)/asm/JSystem/JDRNameRefGen.o                          \
     $(BUILD_DIR)/src/JSystem/JDRPlacement.o                           \
     $(BUILD_DIR)/asm/JSystem/JDRRenderMode.o                          \

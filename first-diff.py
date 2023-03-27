@@ -65,9 +65,9 @@ version = args.version
 if version is None:
     version = "us"
     best = 0
-    for ver in ["us", "jp", "eu", "sh"]:
+    for ver in ["us", "jp.r0", "eu", "sh"]:
         try:
-            mtime = os.path.getmtime(f"build/sms_jp_r0/main.dol")
+            mtime = os.path.getmtime(f"build/sms.{ver}/main.dol")
             if mtime > best:
                 best = mtime
                 version = ver
@@ -78,11 +78,11 @@ if version is None:
 if args.make:
     check_call(["make", "-j4", "VERSION=" + version, "COMPARE=0"])
 
-baseimg = f"baserom.dol"
-basemap = f"sms_jp_r0.map"
+baseimg = f"baserom.{version}.dol"
+basemap = f"sms.{version}.map"
 
-myimg = f"build/sms_jp_r0/main.dol"
-mymap = f"build/sms_jp_r0/{basemap}"
+myimg = f"build/sms.{version}/main.dol"
+mymap = f"build/sms.{version}/{basemap}"
 
 if os.path.isfile("expected/" + mymap):
     basemap = "expected/" + mymap

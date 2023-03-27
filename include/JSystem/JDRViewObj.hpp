@@ -7,10 +7,12 @@
 #include "JSystem/JDRNameRef.hpp"
 
 namespace JDrama {
-    class TViewObj : TNameRef { // based on TNameRef
-        public:
-            u32 _00C;
-    };
+
+class TViewObj : public TNameRef {
+	public:
+	u32 _00C;
+};
+
 };
 
 #endif

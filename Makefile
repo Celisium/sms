@@ -46,7 +46,8 @@ ifeq ($(MAPGENFLAG),1)
   MAPGEN := -map $(MAP)
 endif
 
-include obj_files.mk
+include obj_files.$(VERSION).mk
+
 ifeq ($(EPILOGUE_PROCESS),1)
 include e_files.mk
 endif
@@ -100,7 +101,7 @@ endif
 # hardcoded flags
 $(BUILD_DIR)/src/System/FlagManager.o:     FILE_UNIQUE_CFLAGS = -opt all,nostrength -inline all,level=1,deferred
 $(BUILD_DIR)/src/System/ParamInst.o:       FILE_UNIQUE_CFLAGS = -use_lmw_stmw=off
-$(BUILD_DIR)/src/JSystem/%.o:              FILE_UNIQUE_CFLAGS = -use_lmw_stmw=off
+$(BUILD_DIR)/src/JSystem/%.o:              FILE_UNIQUE_CFLAGS = -use_lmw_stmw=off -RTTI off -O4,p
 $(BUILD_DIR)/src/JSystem/JDRPlacement.o:   FILE_UNIQUE_CFLAGS += -RTTI off
 $(BUILD_DIR)/src/JSystem/JSUList.o:        FILE_UNIQUE_CFLAGS = -inline on,auto -O4,p
 $(BUILD_DIR)/src/os/__start.o:             FILE_UNIQUE_CFLAGS = -inline on,auto -O4,p
@@ -145,7 +146,7 @@ clean:
 	find . -name '*.o' -exec rm {} +
 	find . -name 'ctx.c' -exec rm {} +
 	find ./include -name "*.s" -type f -delete
-	$(MAKE) -C tools clean
+#	$(MAKE) -C tools clean
 tools:
 	$(MAKE) -C tools
 

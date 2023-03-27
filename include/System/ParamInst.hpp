@@ -6,4 +6,5 @@
 template<typename T> class TParamT: public TBaseParam {
 public:
 	T value;
+	void load(JSUMemoryInputStream& stream);
 };
