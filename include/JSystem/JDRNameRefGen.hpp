@@ -14,6 +14,8 @@ class TNameRefGen {
 	virtual void load(JSUMemoryInputStream&);
 	virtual void getRefName(const char*) const;
 
+	s32 unknown_04;
+
 };
 
 }

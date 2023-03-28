@@ -9,6 +9,7 @@ class JSUInputStream {
 	virtual void getAvailable() = 0;
 	void read(void*, s32);
 	const char* readString();
+	void readString(char*, u16);
 	virtual void skip(u16);
 	u32 _000;
 	u32 _004;

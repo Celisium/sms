@@ -5,10 +5,23 @@
 
 namespace JDrama {
 
+template <typename T>
+struct TFlagT {
+
+	T flag;
+
+	TFlagT(T flag) : flag(flag) {}
+
+};
+
 class TActor : public TPlacement {
+
 	public:
-	// TActor
-	char _020[0x24];
+	
+	JGeometry::TVec3<f32> unknown_24;
+	JGeometry::TVec3<f32> unknown_30;
+
+	virtual void load(JSUMemoryInputStream&);
 
 	TActor();
 

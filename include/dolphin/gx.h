@@ -645,8 +645,17 @@ void GXLoadNrmMtxImm(Mtx, int);
 u16 GXGetNumXfbLines(float, u16);
 float GXGetYScaleFactor(u16, u16);
 
-void GXSetViewport(float, float, float, float, float, float);
+void GXSetViewport(f32 xOrig, f32 yOrig, f32 wd, f32 ht, f32 nearZ, f32 farZ);
+void GXSetViewportJitter(f32 xOrig, f32 yOrig, f32 wd, f32 ht, f32 nearZ, f32 farZ, u32 field);
 void GXSetTevKColor(GXTevKColorID, GXColor);
+
+// TODO: determine size of internals
+typedef struct {
+	s32 internal;
+} GXLightObj;
+
+void GXInitLightColor(GXLightObj* lt_obj, GXColor color);
+void GXInitLightPos(GXLightObj* lt_obj, f32 x, f32 y, f32 z);
 
 #ifdef __cplusplus
 };
