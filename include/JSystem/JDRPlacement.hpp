@@ -17,7 +17,7 @@ class TPlacement : public TViewObj {
 	virtual ~TPlacement() {};
 	virtual void load(JSUMemoryInputStream&);
 
-	virtual void _vt020() = 0;
+	virtual void perform() = 0;
 
 	JGeometry::TVec3<f32> position;
 	u32 _01C;

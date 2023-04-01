@@ -387,7 +387,7 @@ typedef enum _SDK_GXFogType {
 	                       // function. For perspective projection mode.
 } GXFogType;
 
-typedef struct _SDK_GXColor {
+typedef struct _GXColor {
 	u8 r, g, b, a;
 } GXColor;
 
@@ -651,11 +651,26 @@ void GXSetTevKColor(GXTevKColorID, GXColor);
 
 // TODO: determine size of internals
 typedef struct {
-	s32 internal;
+	char internals[0x40];
 } GXLightObj;
+
+typedef enum {
+	GX_LIGHT0,
+	GX_LIGHT1,
+	GX_LIGHT2,
+	GX_LIGHT3,
+	GX_LIGHT4,
+	GX_LIGHT5,
+	GX_LIGHT6,
+	GX_LIGHT7,
+	GX_MAX_LIGHT,
+	GX_LIGHT_NULL
+} GXLightID;
 
 void GXInitLightColor(GXLightObj* lt_obj, GXColor color);
 void GXInitLightPos(GXLightObj* lt_obj, f32 x, f32 y, f32 z);
+void GXLoadLightObjImm(const GXLightObj* lt_obj, GXLightID light);
+void GXGetLightColor(const GXLightObj* lt_obj, GXColor* color);
 
 #ifdef __cplusplus
 };

@@ -4,8 +4,7 @@
 #include "JSystem/JSUInputStream.hpp"
 #include "JSystem/JSUOutputStream.hpp"
 
-
-class JSUMemoryInputStream: public JSURandomInputStream {
+class JSUMemoryInputStream : public JSURandomInputStream {
 	
 	public:
 

@@ -1,7 +1,9 @@
 #ifndef JSUINPUTSTREAM_HPP
 #define JSUINPUTSTREAM_HPP
 
-class JSUInputStream {
+#include "JSystem/JSUIosBase.hpp"
+
+class JSUInputStream : public JSUIosBase {
 
 	public:
 	
@@ -16,6 +18,12 @@ class JSUInputStream {
 
 };
 
-class JSURandomInputStream: public JSUInputStream {};
+class JSURandomInputStream: public JSUInputStream {
+
+	public:
+
+	virtual void getAvailable();
+
+};
 
 #endif

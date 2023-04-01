@@ -20,11 +20,14 @@ class TGraphics {
 
 	public:
 	
-	/* 0x00 */ char unknown_00[0x20];
-	/* 0x20 */ bool unknown_20; // Probably an interlaced rendering flag.
-	/* 0x21 */ char unknown_21[0x33];
+	char unknown_00[0x20];
+	bool unknown_20; // Probably an interlaced rendering flag.
+	char unknown_21[0x33];
 	TRect viewport;
-	
+	char unknown_64[0x50];
+	Mtx unknown_B4;
+	GXLightID unknown_E4;
+
 	void setViewport(const TRect& viewport, f32 near_z, f32 far_z);
 };
 
