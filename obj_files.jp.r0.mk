@@ -193,7 +193,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JSGAmbientLight.o                        \
     $(BUILD_DIR)/asm/JSystem/JSGCamera.o                              \
     $(BUILD_DIR)/asm/JSystem/JSGActor.o                               \
-    $(BUILD_DIR)/asm/JSystem/JSGLight.o                               \
+    $(BUILD_DIR)/src/JSystem/JSGLight.o                               \
     $(BUILD_DIR)/src/JSystem/JSGObject.o                              \
     $(BUILD_DIR)/asm/JSystem/JSGSystem.o                              \
     $(BUILD_DIR)/asm/JSystem/dspproc.o                                \

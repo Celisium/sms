@@ -649,7 +649,6 @@ void GXSetViewport(f32 xOrig, f32 yOrig, f32 wd, f32 ht, f32 nearZ, f32 farZ);
 void GXSetViewportJitter(f32 xOrig, f32 yOrig, f32 wd, f32 ht, f32 nearZ, f32 farZ, u32 field);
 void GXSetTevKColor(GXTevKColorID, GXColor);
 
-// TODO: determine size of internals
 typedef struct {
 	char internals[0x40];
 } GXLightObj;
@@ -671,6 +670,23 @@ void GXInitLightColor(GXLightObj* lt_obj, GXColor color);
 void GXInitLightPos(GXLightObj* lt_obj, f32 x, f32 y, f32 z);
 void GXLoadLightObjImm(const GXLightObj* lt_obj, GXLightID light);
 void GXGetLightColor(const GXLightObj* lt_obj, GXColor* color);
+
+typedef enum _GXDistAttnFn {
+	GX_DA_OFF,
+	GX_DA_GENTLE,
+	GX_DA_MEDIUM,
+	GX_DA_STEEP
+} GXDistAttnFn;
+
+typedef enum _GXSpotFn {
+	GX_SP_OFF,
+	GX_SP_FLAT,
+	GX_SP_COS,
+	GX_SP_COS2,
+	GX_SP_SHARP,
+	GX_SP_RING1,
+	GX_SP_RING2
+} GXSpotFn;
 
 #ifdef __cplusplus
 };

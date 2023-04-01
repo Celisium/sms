@@ -3,11 +3,7 @@
 
 #include "JSystem/JDRPlacement.hpp"
 #include "JSystem/JDRViewObj.hpp"
-
-namespace JStage {
-// TODO: Move to proper header and determine values.
-enum TELight {};
-}
+#include "JSystem/JStage/JSGLight.hpp"
 
 namespace JDrama {
 

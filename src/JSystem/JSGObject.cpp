@@ -13,5 +13,4 @@ void TObject::JSGGetParent(TObject**, u32*) const {}
 void TObject::JSGSetParent(TObject*, u32) {}
 void TObject::JSGSetRelation(bool, TObject*, u32) {}
 
-
 }

@@ -15,7 +15,7 @@ class TObject {
 	virtual s32  JSGGetFlag() const;
 	virtual void JSGSetFlag(u32);
 	virtual s32  JSGGetData(u32, void*, u32) const;
-	virtual void JSGSetData(u32, void const*, u32);
+	virtual void JSGSetData(u32, const void*, u32);
 	virtual void JSGGetParent(TObject**, u32*) const;
 	virtual void JSGSetParent(TObject*, u32);
 	virtual void JSGSetRelation(bool, TObject*, u32);
