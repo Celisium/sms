@@ -1,10 +1,17 @@
 #include "JSystem/JDRLighting.hpp"
 
+#include "JSystem/JUTColor.hpp"
+#include "JSystem/JDRNameRefGen.hpp"
+
+#pragma opt_strength_reduction off
+
 namespace JDrama {
 
 void TLight::load(JSUMemoryInputStream& arg_0) {
-
+	
 	this->TPlacement::load(arg_0);
+	
+	this->setColor(JUtility::TColor(arg_0.read_u32()));
 
 }
 
@@ -31,7 +38,6 @@ JStage::TELight TLight::JSGGetLightType() const {
 
 void TLight::JSGSetLightType(JStage::TELight arg_0) {
 
-	// This seems a bit odd.
 	if (arg_0 == 1) {
 		this->unknown_64 = arg_0;
 	}
@@ -39,13 +45,13 @@ void TLight::JSGSetLightType(JStage::TELight arg_0) {
 }
 
 void TLight::JSGGetPosition(Vec* vec) const {
-	*vec = this->position;
+	// TODO: I'm not sure if this is UB or not.
+	*vec = *(Vec*)(&this->position.x);
 }
 
 void TLight::JSGSetPosition(const Vec& vec) {
 
 	if (this->unknown_64 != 2) {
-		// Each component has to be assigned separately to match.
 		this->position.x = vec.x;
 		this->position.y = vec.y;
 		this->position.z = vec.z;
@@ -68,6 +74,46 @@ void TLight::JSGSetColor(GXColor colour) {
 
 }
 
+void TLightAry::load(JSUMemoryInputStream& arg_0) {
+
+	this->TNameRef::load(arg_0);
+
+	this->setLightNum(arg_0.read_s32());
+
+	for (s32 i = 0; i < this->num_lights; i++) {
+
+		JSUMemoryInputStream stream(nullptr, 0);
+
+		TNameRef::getType(arg_0, stream);
+
+		this->lights[i].load(stream);
+
+	}
+}
+
+TNameRef* TLightAry::searchF(u16 arg_0, const char* arg_1) {
+
+	TNameRef* name_ref = this->TNameRef::searchF(arg_0, arg_1);
+
+	if (name_ref != nullptr) {
+		return name_ref;
+	} else {
+
+		for (s32 i = 0; i < this->num_lights; i++) {
+
+			name_ref = this->lights[i].searchF(arg_0, arg_1);
+			if (name_ref != nullptr) {
+				return name_ref;
+			}
+				
+		}
+
+		return nullptr;
+			
+	}
+    
+}
+
 void TLightAry::setLightNum(s32 num_lights) {
 
 	s32 padding;
@@ -81,7 +127,142 @@ void TLightAry::setLightNum(s32 num_lights) {
 	for (int i = 0; i < this->num_lights; i++) {
 		this->lights[i].index = i;
 	}
+
+}
+
+inline TViewObj::TViewObj(const char* name) : TNameRef(name), unknown_0C(0) {}
+
+void TLightAry::perform(u32 arg_0, TGraphics* arg_1) {
+
+	if (arg_0 & 0x20) {
+
+		Mtx& mtx = arg_1->unknown_B4;
+
+		for (s32 i = 0; i < this->num_lights; i++) {
+			this->lights[i].setLightPosition(mtx);
+		}
+
+		DCFlushRange(this->lights, this->num_lights * sizeof(TIdxLight));
+
+		GXSetArray(GX_LIGHT_ARRAY, (char*)this->lights + 0x24, sizeof(TIdxLight));
+
+	}
+
+}
+
+void TAmbColor::load(JSUMemoryInputStream& arg_0) {
+
+	this->TViewObj::load(arg_0);
+
+	this->color.set(arg_0.read_u32());
+
+}
+
+void TAmbColor::perform(u32 arg_0, TGraphics* arg_1) {
+
+	if (arg_0 & 0x20) {
+		GXSetChanAmbColor(GX_COLOR0A0, this->color);
+	}
+
+}
+
+GXColor TAmbColor::JSGGetColor() const {
+	return this->color;
+}
+
+void TAmbColor::JSGSetColor(GXColor color) {
+	s32 padding[2];
+	this->color.set(JUtility::TColor(color));
+}
+
+void TAmbAry::load(JSUMemoryInputStream& arg_0) {
+
+	this->TNameRef::load(arg_0);
+
+	this->setAmbNum(arg_0.read_s32());
+
+	for (int i = 0; i < this->num_ambs; i++) {
+
+		JSUMemoryInputStream stream(nullptr, 0);
+
+		TNameRef::getType(arg_0, stream);
+
+		this->ambs[i].load(stream);
+
+	}
+
+}
+
+TNameRef* TAmbAry::searchF(u16 arg_0, const char* arg_1) {
+
+	TNameRef* name_ref = this->TNameRef::searchF(arg_0, arg_1);
+
+	if (name_ref != nullptr) {
+		return name_ref;
+	} else {
+
+		for (s32 i = 0; i < this->num_ambs; i++) {
+
+			name_ref = this->ambs[i].searchF(arg_0, arg_1);
+			if (name_ref != nullptr) {
+				return name_ref;
+			}
+
+		}
+
+		return nullptr;
+
+	}
+
+}
+
+void TAmbAry::setAmbNum(s32 num_ambs) {
+
+	this->num_ambs = num_ambs;
+
+	if (num_ambs > 0) {
+		this->ambs = new TAmbColor[this->num_ambs];
+	}
+
+}
+
+void TLightMap::load(JSUMemoryInputStream& arg_0) {
     
+	this->unknown_10 = arg_0.read_s32();
+
+	this->unknown_14 = new TLightInfo[this->unknown_10];
+
+	for (int i = 0; i < this->unknown_10; i++) {
+
+			char str[0x50];
+			this->unknown_14[i].unknown_00 = arg_0.read_s32();
+
+			arg_0.readString(str, sizeof(str));
+
+			this->unknown_14[i].unknown_04 = (TViewObj*)TNameRefGen::instance->getNameRef2(str);
+			
+	}
+    
+}
+
+void TLightMap::perform(u32 arg_0, TGraphics* arg_1) {
+
+	if (arg_0 & 0x20) {
+
+		for (int i = 0; i < this->unknown_10; i++) {
+
+			TLightInfo* info = this->unknown_14 + i;
+
+			if (info->unknown_04) {
+					arg_1->unknown_E4 = (GXLightID)info->unknown_00;
+					this->unknown_14[i].unknown_04->perform(arg_0, arg_1);
+
+			}
+
+		}
+
+	}
+
 }
 
 }

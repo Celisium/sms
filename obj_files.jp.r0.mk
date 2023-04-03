@@ -91,7 +91,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JDREfbSetting.o                          \
     $(BUILD_DIR)/asm/JSystem/JDRFrmGXSet.o                            \
     $(BUILD_DIR)/src/JSystem/JDRGraphics.o                            \
-    $(BUILD_DIR)/asm/JSystem/JDRLighting.o                            \
+    $(BUILD_DIR)/src/JSystem/JDRLighting.o                            \
     $(BUILD_DIR)/src/JSystem/JDRNameRef.o                             \
     $(BUILD_DIR)/asm/JSystem/JDRNameRefGen.o                          \
     $(BUILD_DIR)/src/JSystem/JDRPlacement.o                           \
@@ -190,7 +190,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JPAResourceManager.o                     \
     $(BUILD_DIR)/asm/JSystem/JPASweepShape.o                          \
     $(BUILD_DIR)/asm/JSystem/JPATexture.o                             \
-    $(BUILD_DIR)/asm/JSystem/JSGAmbientLight.o                        \
+    $(BUILD_DIR)/src/JSystem/JSGAmbientLight.o                        \
     $(BUILD_DIR)/asm/JSystem/JSGCamera.o                              \
     $(BUILD_DIR)/asm/JSystem/JSGActor.o                               \
     $(BUILD_DIR)/src/JSystem/JSGLight.o                               \

@@ -204,6 +204,12 @@ lbl_8004616C:
 	.4byte 0
 
 .section .data, "wa"  # 0x803A8380 - 0x803E6000
+
+ # TODO: This is necessary to match and I'm not sure why.
+ # I'm assuming it has to do with vtable alignment differing with compiler-generated
+ # vtables and manually assembled vtables or something like that.
+.balign 8
+
 .global __vt__Q26JDrama7TScreen
 __vt__Q26JDrama7TScreen:
   .4byte 0

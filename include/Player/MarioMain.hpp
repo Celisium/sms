@@ -1,19 +1,15 @@
 #ifndef MARIOMAIN_HPP
 #define MARIOMAIN_HPP
 
+
 #include "dolphin.h"
+#include "JSystem/JDRActor.hpp"
 #include "JSystem/JGeometry.hpp"
 #include "JSystem/JDRNameRef.hpp"
 #include "JSystem/JDRPlacement.hpp"
 #include "Player/MarioInit.hpp"
 
-class TActor : public JDrama::TPlacement {
-    public:
-        // TActor
-        char _020[0x24];
-};
-
-class THitActor : public TActor {
+class THitActor : public JDrama::TActor {
     public:
         THitActor **collisions;
         u16 colCount;

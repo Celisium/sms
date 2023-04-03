@@ -13,13 +13,17 @@ class TViewObj : public TNameRef {
 	
 	public:
 
-	void testPerform(u32, TGraphics*);
+	TViewObj(const char* name);
+
+	virtual ~TViewObj() {}
 	virtual void perform(u32, TGraphics*) = 0;
+
+	void testPerform(u32, TGraphics*);
 
 	u16 unknown_0C;
 
 };
 
-};
+}
 
 #endif

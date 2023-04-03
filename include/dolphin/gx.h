@@ -666,11 +666,6 @@ typedef enum {
 	GX_LIGHT_NULL
 } GXLightID;
 
-void GXInitLightColor(GXLightObj* lt_obj, GXColor color);
-void GXInitLightPos(GXLightObj* lt_obj, f32 x, f32 y, f32 z);
-void GXLoadLightObjImm(const GXLightObj* lt_obj, GXLightID light);
-void GXGetLightColor(const GXLightObj* lt_obj, GXColor* color);
-
 typedef enum _GXDistAttnFn {
 	GX_DA_OFF,
 	GX_DA_GENTLE,
@@ -687,6 +682,28 @@ typedef enum _GXSpotFn {
 	GX_SP_RING1,
 	GX_SP_RING2
 } GXSpotFn;
+
+typedef enum _GXChannelID {
+	GX_COLOR0,
+	GX_COLOR1,
+	GX_ALPHA0,
+	GX_ALPHA1,
+	GX_COLOR0A0,
+	GX_COLOR1A1,
+	GX_COLOR_ZERO,
+	GX_ALPHA_BUMP,
+	GX_ALPHA_BUMPN,
+	GX_COLOR_NULL
+} GXChannelID;
+
+void GXSetArray(GXAttr attr, const void* base_ptr, u8 stride);
+
+void GXInitLightColor(GXLightObj* lt_obj, GXColor color);
+void GXInitLightPos(GXLightObj* lt_obj, f32 x, f32 y, f32 z);
+void GXInitLightAttn(GXLightObj* lt_obj, f32 a0, f32 a1, f32 a2, f32 k0, f32 k1, f32 k2);
+void GXLoadLightObjImm(const GXLightObj* lt_obj, GXLightID light);
+void GXGetLightColor(const GXLightObj* lt_obj, GXColor* color);
+void GXSetChanAmbColor(GXChannelID chan, GXColor amb_color);
 
 #ifdef __cplusplus
 };

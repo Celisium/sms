@@ -12,7 +12,13 @@ class JSUMemoryInputStream : public JSURandomInputStream {
 	s32 length;
 	s32 position;
 
+	virtual ~JSUMemoryInputStream() {}
+
 	void setBuffer(const void*, s32);
+
+	JSUMemoryInputStream(const void* buffer, s32 size) {
+		this->setBuffer(buffer, size);
+	}
 
 };
 

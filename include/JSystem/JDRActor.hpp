@@ -21,6 +21,8 @@ class TActor : public TPlacement {
 	JGeometry::TVec3<f32> unknown_24;
 	JGeometry::TVec3<f32> unknown_30;
 
+	s32 padding[3]; // TODO: I'm not sure where this goes.
+
 	virtual void load(JSUMemoryInputStream&);
 
 	TActor();

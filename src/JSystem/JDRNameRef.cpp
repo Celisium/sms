@@ -28,8 +28,7 @@ const char* TNameRef::getType(JSUMemoryInputStream& arg_0, JSUMemoryInputStream&
 
 	s32 temp = var_20; // needed to match.
 
-	// TODO: I think there's something wrong with how the input buffer's members are named.
-	arg_1.setBuffer((void*)(arg_0._004 + arg_0.length) , temp - 4);
+	arg_1.setBuffer((void*)((char*)arg_0.buffer + arg_0.position), temp - 4);
 	
 	arg_0.skip(temp - 4);
 
@@ -50,7 +49,7 @@ void TNameRef::genObject(JSUMemoryInputStream& arg_0, JSUMemoryInputStream& arg_
 	
 	s32 temp = var_20;
 
-	arg_1.setBuffer((void*)(arg_0._004 + arg_0.length), temp - 4);
+	arg_1.setBuffer((void*)((char*)arg_0.buffer + arg_0.position), temp - 4);
 
 	arg_0.skip(temp - 4);
 
@@ -58,7 +57,7 @@ void TNameRef::genObject(JSUMemoryInputStream& arg_0, JSUMemoryInputStream& arg_
 
 	const char* temp2 = arg_1.readString();
 	TNameRefGen* instance = TNameRefGen::instance;
-	instance->getRefName(temp2);
+	instance->getNameRef(temp2);
 
 }
 

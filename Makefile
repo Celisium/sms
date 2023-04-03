@@ -76,7 +76,7 @@ endif
 LD      := $(WINE) tools/mwcc_compiler/$(MWLD_VERSION)/mwldeppc.exe
 ELF2DOL := tools/elf2dol
 SHA1SUM := sha1sum
-PYTHON  := python3
+PYTHON  := python
 
 # Options
 INCLUDES := -i include/
@@ -102,7 +102,6 @@ endif
 $(BUILD_DIR)/src/System/FlagManager.o:     FILE_UNIQUE_CFLAGS = -opt all,nostrength -inline all,level=1,deferred
 $(BUILD_DIR)/src/System/ParamInst.o:       FILE_UNIQUE_CFLAGS = -use_lmw_stmw=off
 $(BUILD_DIR)/src/JSystem/%.o:              FILE_UNIQUE_CFLAGS = -use_lmw_stmw=off -RTTI off -O4,p
-$(BUILD_DIR)/src/JSystem/JDRPlacement.o:   FILE_UNIQUE_CFLAGS += -RTTI off
 $(BUILD_DIR)/src/JSystem/JSUList.o:        FILE_UNIQUE_CFLAGS = -inline on,auto -O4,p
 $(BUILD_DIR)/src/os/__start.o:             FILE_UNIQUE_CFLAGS = -inline on,auto -O4,p
 
@@ -143,9 +142,9 @@ endif
 clean:
 	rm -f -d -r build
 	rm -f -d -r epilogue
-	find . -name '*.o' -exec rm {} +
-	find . -name 'ctx.c' -exec rm {} +
-	find ./include -name "*.s" -type f -delete
+#	find . -name '*.o' -exec rm {} +
+#	find . -name 'ctx.c' -exec rm {} +
+#	find ./include -name "*.s" -type f -delete
 #	$(MAKE) -C tools clean
 tools:
 	$(MAKE) -C tools
