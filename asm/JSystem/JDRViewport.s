@@ -156,6 +156,7 @@ lbl_800471E4:
 /* 800471FC 0004413C  4E 80 00 20 */	blr 
 
 .section .data, "wa"  # 0x803A8380 - 0x803E6000
+.balign 8
 .global __vt__Q26JDrama9TViewport
 __vt__Q26JDrama9TViewport:
   .4byte 0

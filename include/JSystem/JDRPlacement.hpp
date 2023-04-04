@@ -4,7 +4,7 @@
 #include "dolphin.h"
 #include "types.h"
 
-#include "JSystem/JDRViewObj.hpp"
+#include "JSystem/JDrama/JDRViewObj.hpp"
 #include "JSystem/JSUInputStream.hpp"
 #include "JSystem/JGeometry.hpp"
 

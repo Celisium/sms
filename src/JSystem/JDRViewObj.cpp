@@ -1,4 +1,4 @@
-#include "JSystem/JDRViewObj.hpp"
+#include "JSystem/JDrama/JDRViewObj.hpp"
 
 namespace JDrama {
 

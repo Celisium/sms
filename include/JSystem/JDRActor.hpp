@@ -5,15 +5,6 @@
 
 namespace JDrama {
 
-template <typename T>
-struct TFlagT {
-
-	T flag;
-
-	TFlagT(T flag) : flag(flag) {}
-
-};
-
 class TActor : public TPlacement {
 
 	public:
