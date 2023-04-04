@@ -704,6 +704,7 @@ void GXInitLightAttn(GXLightObj* lt_obj, f32 a0, f32 a1, f32 a2, f32 k0, f32 k1,
 void GXLoadLightObjImm(const GXLightObj* lt_obj, GXLightID light);
 void GXGetLightColor(const GXLightObj* lt_obj, GXColor* color);
 void GXSetChanAmbColor(GXChannelID chan, GXColor amb_color);
+void GXSetScissor(u32 xOrig, u32 yOrig, u32 wd, u32 ht);
 
 #ifdef __cplusplus
 };

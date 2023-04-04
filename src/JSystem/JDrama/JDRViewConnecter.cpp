@@ -5,7 +5,7 @@ namespace JDrama {
 inline TViewObj::TViewObj(const char* name) : TNameRef(name), unknown_0C(0) {}
 
 TViewConnecter::TViewConnecter(TViewObj* arg_0, TViewObj* arg_1, TFlagT<u16> arg_2, const char* name) 
-    : TViewObj(name), unknown_10(arg_0), unknown_14(arg_1), unknown_18(arg_2) {}
+	: TViewObj(name), unknown_10(arg_0), unknown_14(arg_1), unknown_18(arg_2) {}
 
 void TViewConnecter::perform(u32 arg_0, TGraphics* arg_1) {
 

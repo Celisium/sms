@@ -30,7 +30,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JUTGamePad.o                             \
     $(BUILD_DIR)/asm/JSystem/JUTNameTab.o                             \
     $(BUILD_DIR)/asm/JSystem/JUTPalette.o                             \
-    $(BUILD_DIR)/src/JSystem/JUTRect.o                                \
+    $(BUILD_DIR)/src/JSystem/JUtility/JUTRect.o                       \
     $(BUILD_DIR)/asm/JSystem/JUTResource.o                            \
     $(BUILD_DIR)/asm/JSystem/JUTTexture.o                             \
     $(BUILD_DIR)/asm/JSystem/JMath.o                                  \
@@ -102,8 +102,8 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JDRSmJ3DScn.o                            \
     $(BUILD_DIR)/asm/JSystem/JDRVideo.o                               \
     $(BUILD_DIR)/src/JSystem/JDrama/JDRViewConnecter.o                \
-    $(BUILD_DIR)/src/JSystem/JDRViewObj.o                             \
-    $(BUILD_DIR)/asm/JSystem/JDRViewport.o                            \
+    $(BUILD_DIR)/src/JSystem/JDrama/JDRViewObj.o                      \
+    $(BUILD_DIR)/src/JSystem/JDrama/JDRViewport.o                     \
     $(BUILD_DIR)/asm/JSystem/JADHioNode.o                             \
     $(BUILD_DIR)/asm/JSystem/JALCalc.o                                \
     $(BUILD_DIR)/asm/JSystem/JALModSe.o                               \
