@@ -1,4 +1,5 @@
 #include "JSystem/JDrama/JDRScreen.hpp"
+#include "JSystem/JDrama/JDRViewport.hpp"
 
 void TCamConnecter::perform(u32 arg_0, JDrama::TGraphics* arg_1) {
 
@@ -21,5 +22,20 @@ void TCamConnecter::perform(u32 arg_0, JDrama::TGraphics* arg_1) {
 }
 
 namespace JDrama {
+
+TScreen::TScreen(const TRect& arg_0, const char* name) : TViewConnecter(nullptr, nullptr, 0, name) {
+
+	this->unknown_10 = new TViewport(arg_0, "<Viewport>");
+	this->unknown_14 = new TCamConnecter();
+
+}
+
+void TScreen::assignCamera(TViewObj* arg_0) {
+	((TCamConnecter*)this->unknown_14)->unknown_10 = arg_0;
+}
+
+void TScreen::assignViewObj(TViewObj* arg_0) {
+	((TCamConnecter*)this->unknown_14)->unknown_14 = arg_0;
+}
 
 }

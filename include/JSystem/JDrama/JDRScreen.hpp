@@ -7,7 +7,7 @@ class TCamConnecter : public JDrama::TViewConnecter {
 
 	public:
 
-	TCamConnecter();
+	TCamConnecter() : TViewConnecter(nullptr, nullptr, 0, "<CamConnecter>") {}
 
 	virtual ~TCamConnecter() {}
 	virtual void perform(u32, JDrama::TGraphics*);
