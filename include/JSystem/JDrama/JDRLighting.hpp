@@ -1,7 +1,7 @@
 #ifndef JSYSTEM_JDRLIGHTING_H
 #define JSYSTEM_JDRLIGHTING_H
 
-#include "JSystem/JDRPlacement.hpp"
+#include "JSystem/JDrama/JDRPlacement.hpp"
 #include "JSystem/JDrama/JDRViewObj.hpp"
 #include "JSystem/JStage/JSGAmbientLight.hpp"
 #include "JSystem/JStage/JSGLight.hpp"

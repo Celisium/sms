@@ -4,7 +4,7 @@
 #include "dolphin.h"
 
 #include "JSystem/JSUMemoryStream.hpp"
-#include "JSystem/JDRGraphics.hpp"
+#include "JSystem/JDrama/JDRGraphics.hpp"
 
 namespace JDrama {
 

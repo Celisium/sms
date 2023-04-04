@@ -1,6 +1,6 @@
-#include "JSystem/JDRNameRef.hpp"
+#include "JSystem/JDrama/JDRNameRef.hpp"
 
-#include "JSystem/JDRNameRefGen.hpp"
+#include "JSystem/JDrama/JDRNameRefGen.hpp"
 
 #include "types.h"
 

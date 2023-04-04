@@ -90,13 +90,13 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JDREfbCtrl.o                             \
     $(BUILD_DIR)/asm/JSystem/JDREfbSetting.o                          \
     $(BUILD_DIR)/asm/JSystem/JDRFrmGXSet.o                            \
-    $(BUILD_DIR)/src/JSystem/JDRGraphics.o                            \
-    $(BUILD_DIR)/src/JSystem/JDRLighting.o                            \
-    $(BUILD_DIR)/src/JSystem/JDRNameRef.o                             \
+    $(BUILD_DIR)/src/JSystem/JDrama/JDRGraphics.o                     \
+    $(BUILD_DIR)/src/JSystem/JDrama/JDRLighting.o                     \
+    $(BUILD_DIR)/src/JSystem/JDrama/JDRNameRef.o                      \
     $(BUILD_DIR)/asm/JSystem/JDRNameRefGen.o                          \
-    $(BUILD_DIR)/src/JSystem/JDRPlacement.o                           \
+    $(BUILD_DIR)/src/JSystem/JDrama/JDRPlacement.o                    \
     $(BUILD_DIR)/asm/JSystem/JDRRenderMode.o                          \
-    $(BUILD_DIR)/src/JSystem/JDRResolution.o                          \
+    $(BUILD_DIR)/src/JSystem/JDrama/JDRResolution.o                   \
     $(BUILD_DIR)/src/JSystem/JDrama/JDRScreen.o                       \
     $(BUILD_DIR)/asm/JSystem/JDRSmJ3DAct.o                            \
     $(BUILD_DIR)/asm/JSystem/JDRSmJ3DScn.o                            \
@@ -190,11 +190,11 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JPAResourceManager.o                     \
     $(BUILD_DIR)/asm/JSystem/JPASweepShape.o                          \
     $(BUILD_DIR)/asm/JSystem/JPATexture.o                             \
-    $(BUILD_DIR)/src/JSystem/JSGAmbientLight.o                        \
+    $(BUILD_DIR)/src/JSystem/JStage/JSGAmbientLight.o                 \
     $(BUILD_DIR)/asm/JSystem/JSGCamera.o                              \
     $(BUILD_DIR)/asm/JSystem/JSGActor.o                               \
-    $(BUILD_DIR)/src/JSystem/JSGLight.o                               \
-    $(BUILD_DIR)/src/JSystem/JSGObject.o                              \
+    $(BUILD_DIR)/src/JSystem/JStage/JSGLight.o                        \
+    $(BUILD_DIR)/src/JSystem/JStage/JSGObject.o                       \
     $(BUILD_DIR)/asm/JSystem/JSGSystem.o                              \
     $(BUILD_DIR)/asm/JSystem/dspproc.o                                \
     $(BUILD_DIR)/asm/JSystem/dsptask.o                                \

@@ -2,7 +2,7 @@
 #define JSYSTEM_JDRNAMEREFGEN_H
 
 #include "JSystem/JSUMemoryStream.hpp"
-#include "JSystem/JDRNameRef.hpp"
+#include "JSystem/JDrama/JDRNameRef.hpp"
 
 namespace JDrama {
 

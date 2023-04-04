@@ -1,8 +1,7 @@
+#include "JSystem/JDrama/JDRPlacement.hpp"
+
 #include "dolphin.h"
-
 #include "types.h"
-
-#include "JSystem/JDRPlacement.hpp"
 
 namespace JDrama {
 

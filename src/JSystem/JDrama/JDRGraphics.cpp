@@ -1,4 +1,4 @@
-#include "JSystem/JDRGraphics.hpp"
+#include "JSystem/JDrama/JDRGraphics.hpp"
 
 #include "dolphin/gx.h"
 

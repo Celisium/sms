@@ -1,7 +1,7 @@
 #ifndef JSYSTEM_JDRACTOR_H
 #define JSYSTEM_JDRACTOR_H
 
-#include "JSystem/JDRPlacement.hpp"
+#include "JSystem/JDrama/JDRPlacement.hpp"
 
 namespace JDrama {
 

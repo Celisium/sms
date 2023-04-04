@@ -4,8 +4,8 @@
 #include "dolphin.h"
 #include "types.h"
 
-#include "JSystem/JDRNameRef.hpp"
-#include "JSystem/JDRGraphics.hpp"
+#include "JSystem/JDrama/JDRNameRef.hpp"
+#include "JSystem/JDrama/JDRGraphics.hpp"
 
 namespace JDrama {
 

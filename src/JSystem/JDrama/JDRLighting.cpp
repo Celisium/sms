@@ -1,7 +1,7 @@
-#include "JSystem/JDRLighting.hpp"
+#include "JSystem/JDrama/JDRLighting.hpp"
 
 #include "JSystem/JUTColor.hpp"
-#include "JSystem/JDRNameRefGen.hpp"
+#include "JSystem/JDrama/JDRNameRefGen.hpp"
 
 #pragma opt_strength_reduction off
 

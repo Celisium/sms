@@ -3,10 +3,10 @@
 
 
 #include "dolphin.h"
-#include "JSystem/JDRActor.hpp"
+#include "JSystem/JDrama/JDRActor.hpp"
 #include "JSystem/JGeometry.hpp"
-#include "JSystem/JDRNameRef.hpp"
-#include "JSystem/JDRPlacement.hpp"
+#include "JSystem/JDrama/JDRNameRef.hpp"
+#include "JSystem/JDrama/JDRPlacement.hpp"
 #include "Player/MarioInit.hpp"
 
 class THitActor : public JDrama::TActor {
