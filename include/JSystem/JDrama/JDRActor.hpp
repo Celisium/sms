@@ -1,5 +1,5 @@
-#ifndef JSYSTEM_JDRACTOR_H
-#define JSYSTEM_JDRACTOR_H
+#ifndef JSYSTEM_JDRAMA_JDRACTOR_H
+#define JSYSTEM_JDRAMA_JDRACTOR_H
 
 #include "JSystem/JDrama/JDRPlacement.hpp"
 
