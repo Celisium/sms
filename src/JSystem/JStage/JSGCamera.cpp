@@ -7,8 +7,8 @@ namespace JStage {
 
 TCamera::~TCamera() {}
 
-s32 TCamera::JSGFGetType() const {
-	return 3;
+TEObject TCamera::JSGFGetType() const {
+	return (TEObject)3;
 }
 
 TECameraProjection TCamera::JSGGetProjectionType() const {

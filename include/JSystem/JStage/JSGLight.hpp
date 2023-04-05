@@ -16,7 +16,7 @@ class TLight : public TObject {
 	public:
 
 	virtual ~TLight() = 0;
-	virtual s32 JSGFGetType() const;
+	virtual TEObject JSGFGetType() const;
 
 	virtual TELight JSGGetLightType() const;
 	virtual void JSGSetLightType(TELight type);

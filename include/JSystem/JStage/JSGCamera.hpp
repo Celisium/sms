@@ -20,7 +20,7 @@ class TCamera : public TObject {
 
 	virtual ~TCamera() = 0;
 
-	virtual s32 JSGFGetType() const;
+	virtual TEObject JSGFGetType() const;
 	virtual TECameraProjection JSGGetProjectionType() const;
 	virtual void JSGSetProjectionType(TECameraProjection);
 	virtual f32  JSGGetProjectionNear() const;

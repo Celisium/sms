@@ -5,12 +5,14 @@
 
 namespace JStage {
 
+enum TEObject {};
+
 class TObject {
 
 	public:
 
 	virtual ~TObject() = 0;
-	virtual s32  JSGFGetType() const = 0;
+	virtual TEObject JSGFGetType() const = 0;
 	virtual s32  JSGGetName() const;
 	virtual s32  JSGGetFlag() const;
 	virtual void JSGSetFlag(u32);

@@ -4,8 +4,8 @@ namespace JStage {
 
 TActor::~TActor() {}
 
-s32 TActor::JSGFGetType() const {
-	return 2;
+TEObject TActor::JSGFGetType() const {
+	return (TEObject)2;
 }
 
 void TActor::JSGGetTranslation(Vec*) const {}

@@ -226,6 +226,7 @@ lbl_80082078:
 /* 8008209C 0007EFDC  00 00 00 00 */	.4byte 0x00000000  /* unknown instruction */
 
 .section .data, "wa"  # 0x803A8380 - 0x803E6000
+.balign 32
 jdsp:
 	.4byte 0x029F0012
 	.4byte 0

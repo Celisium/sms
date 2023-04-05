@@ -195,7 +195,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/src/JSystem/JStage/JSGActor.o                        \
     $(BUILD_DIR)/src/JSystem/JStage/JSGLight.o                        \
     $(BUILD_DIR)/src/JSystem/JStage/JSGObject.o                       \
-    $(BUILD_DIR)/asm/JSystem/JSGSystem.o                              \
+    $(BUILD_DIR)/src/JSystem/JStage/JSGSystem.o                       \
     $(BUILD_DIR)/asm/JSystem/dspproc.o                                \
     $(BUILD_DIR)/asm/JSystem/dsptask.o                                \
     $(BUILD_DIR)/asm/JSystem/osdsp.o                                  \

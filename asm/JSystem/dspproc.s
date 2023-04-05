@@ -1,6 +1,9 @@
 .include "macros.inc"
 
 .section .text, "ax"  # 0x80005600 - 0x8036FBA0
+
+.balign 32
+
 .global DSPReleaseHalt__Fv
 DSPReleaseHalt__Fv:
 /* 80081C00 0007EB40  7C 08 02 A6 */	mflr r0

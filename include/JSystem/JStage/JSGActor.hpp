@@ -13,7 +13,7 @@ class TActor : public TObject {
 
 	virtual ~TActor() = 0;
 
-	virtual s32 JSGFGetType() const;
+	virtual TEObject JSGFGetType() const;
 
 	virtual void JSGGetTranslation(Vec*) const;
 	virtual void JSGSetTranslation(const Vec&);

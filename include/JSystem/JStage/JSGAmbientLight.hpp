@@ -13,7 +13,7 @@ class TAmbientLight : public TObject {
 
 	virtual ~TAmbientLight() = 0;
 
-	virtual s32 JSGFGetType() const;
+	virtual TEObject JSGFGetType() const;
 	virtual GXColor JSGGetColor() const;
 	virtual void JSGSetColor(GXColor color);
 

@@ -4,12 +4,10 @@ namespace JStage {
 
 TLight::~TLight() {}
 
-// TODO: Determine significance of 5 (probably an enum or something)
-s32 TLight::JSGFGetType() const {
-	return 5;
+TEObject TLight::JSGFGetType() const {
+	return (TEObject)5;
 }
 
-// TODO: Determine significance of 1 (again, probably an enum)
 TELight TLight::JSGGetLightType() const {
 	return (TELight)1;
 }
