@@ -191,7 +191,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JPASweepShape.o                          \
     $(BUILD_DIR)/asm/JSystem/JPATexture.o                             \
     $(BUILD_DIR)/src/JSystem/JStage/JSGAmbientLight.o                 \
-    $(BUILD_DIR)/asm/JSystem/JSGCamera.o                              \
+    $(BUILD_DIR)/src/JSystem/JStage/JSGCamera.o                       \
     $(BUILD_DIR)/src/JSystem/JStage/JSGActor.o                        \
     $(BUILD_DIR)/src/JSystem/JStage/JSGLight.o                        \
     $(BUILD_DIR)/src/JSystem/JStage/JSGObject.o                       \

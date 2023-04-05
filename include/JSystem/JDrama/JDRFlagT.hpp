@@ -9,7 +9,7 @@ struct TFlagT {
 	T flag;
 
 	TFlagT(const TFlagT& other) : flag(other.flag) {}
-	TFlagT(T flag) : flag(flag) {}
+	TFlagT(T flag);// : flag(flag) {}
 
 };
 

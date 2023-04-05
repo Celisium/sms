@@ -24,7 +24,20 @@ class TNameRefGen {
 
 	}
 
-	s32 unknown_04;
+	TNameRef* unknown_04;
+
+};
+
+template <typename T, typename U>
+class TNameRefPtrListT : public TNameRef {
+
+	public:
+
+	virtual ~TNameRefPtrListT();
+
+	virtual void load(JSUMemoryInputStream& arg_0);
+	virtual void loadAfter();
+	virtual TNameRef* searchF(u16 arg_0, const char* arg_1);
 
 };
 
