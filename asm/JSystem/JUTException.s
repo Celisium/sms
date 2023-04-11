@@ -2227,6 +2227,7 @@ exCallbackObject:
 
 .section .sbss, "wa"  # 0x804097C0 - 0x8040B45C
 .global sErrorManager__12JUTException
+.balign 8
 sErrorManager__12JUTException:
 	.skip 0x4
 sPreUserCallback__12JUTException:

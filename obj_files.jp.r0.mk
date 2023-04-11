@@ -13,7 +13,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JKRFileCache.o                           \
     $(BUILD_DIR)/asm/JSystem/JKRFileFinder.o                          \
     $(BUILD_DIR)/asm/JSystem/JKRFileLoader.o                          \
-    $(BUILD_DIR)/asm/JSystem/JKRHeap.o                                \
+    $(BUILD_DIR)/src/JSystem/JKernel/JKRHeap.o                        \
     $(BUILD_DIR)/asm/JSystem/JKRMemArchive.o                          \
     $(BUILD_DIR)/asm/JSystem/JKRSolidHeap.o                           \
     $(BUILD_DIR)/asm/JSystem/JKRStdHeap.o                             \

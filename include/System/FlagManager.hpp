@@ -3,7 +3,7 @@
 
 #include "dolphin.h"
 
-#include "JSystem/JKRHeap.hpp"
+#include "JSystem/JKernel/JKRHeap.hpp"
 #include "JSystem/JSUMemoryStream.hpp"
 
 class TFlagManager {

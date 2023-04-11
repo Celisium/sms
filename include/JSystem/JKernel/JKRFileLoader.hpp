@@ -1,0 +1,10 @@
+#ifndef JSYSTEM_JKERNEL_JKRFILELOADER_H
+#define JSYSTEM_JKERNEL_JKRFILELOADER_H
+
+class JKRFileLoader {
+
+
+
+};
+
+#endif
