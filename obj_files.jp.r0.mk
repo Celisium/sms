@@ -6,7 +6,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JKRAram.o                                \
     $(BUILD_DIR)/asm/JSystem/JKRArchivePub.o                          \
     $(BUILD_DIR)/asm/JSystem/JKRCompArchive.o                         \
-    $(BUILD_DIR)/asm/JSystem/JKRDisposer.o                            \
+    $(BUILD_DIR)/src/JSystem/JKernel/JKRDisposer.o                    \
     $(BUILD_DIR)/asm/JSystem/JKRDvdArchive.o                          \
     $(BUILD_DIR)/asm/JSystem/JKRDvdFile.o                             \
     $(BUILD_DIR)/asm/JSystem/JKRExpHeap.o                             \
