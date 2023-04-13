@@ -1684,3 +1684,20 @@ sResetOccurred__Q210JUTGamePad13C3ButtonReset:
 .global sResetOccurredPort__Q210JUTGamePad13C3ButtonReset
 sResetOccurredPort__Q210JUTGamePad13C3ButtonReset:
 	.skip 0x4
+
+.section .bss.extra, "wa"
+.global mPadList__10JUTGamePad
+mPadList__10JUTGamePad:
+	.skip 0x17C
+.global mPadStatus__10JUTGamePad
+mPadStatus__10JUTGamePad:
+	.skip 0x30
+.global mPadButton__10JUTGamePad
+mPadButton__10JUTGamePad:
+	.skip 0xC0
+.global mPadMStick__10JUTGamePad
+mPadMStick__10JUTGamePad:
+	.skip 0x40
+.global mPadSStick__10JUTGamePad
+mPadSStick__10JUTGamePad:
+	.skip 0x40

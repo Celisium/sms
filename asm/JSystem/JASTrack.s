@@ -4158,3 +4158,8 @@ sUpdateSyncMode__Q28JASystem6TTrack:
 .global sCallBackFunc__Q28JASystem6TTrack
 sCallBackFunc__Q28JASystem6TTrack:
 	.skip 0x4
+
+.section .bss.extra, "wa"
+.global sParser__Q28JASystem6TTrack
+sParser__Q28JASystem6TTrack:
+	.skip 0x4

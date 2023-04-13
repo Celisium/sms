@@ -293,3 +293,8 @@ __vt__11JKRAramHeap:
 .section .bss, "wa"  # 0x803E6000 - 0x80408AC0
 "@56":
 	.skip 0x10
+
+.section .bss.extra, "wa"
+.global sAramList__11JKRAramHeap
+sAramList__11JKRAramHeap:
+	.skip 0xC

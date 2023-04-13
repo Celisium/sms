@@ -7090,3 +7090,12 @@ __vt__25JPADrawExecEmitterVisitor:
 	.skip 0xC
 "@1658":
 	.skip 0x14
+
+.section .bss.extra, "wa"
+.global vc__7JPADraw
+vc__7JPADraw:
+	.skip 0x1EC
+.global cb__7JPADraw
+cb__7JPADraw:
+	.skip 0xB0
+

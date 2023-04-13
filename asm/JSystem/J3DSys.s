@@ -780,3 +780,20 @@ NullTexData:
 .global j3dDefaultViewNo
 j3dDefaultViewNo:
 	.skip 0x8
+
+.section .bss.extra, "wa"
+.global j3dSys
+j3dSys:
+	.skip 0x1AC
+.global mCurrentMtx__6J3DSys
+mCurrentMtx__6J3DSys:
+	.skip 0x30
+.global mCurrentS__6J3DSys
+mCurrentS__6J3DSys:
+	.skip 0xC
+.global mParentS__6J3DSys
+mParentS__6J3DSys:
+	.skip 0xC
+.global sTexCoordScaleTable__6J3DSys
+sTexCoordScaleTable__6J3DSys:
+	.skip 0x40

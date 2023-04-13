@@ -1029,3 +1029,8 @@ readCount:
 	.skip 0x4
 maxDest:
 	.skip 0x8
+
+.section .bss.extra, "wa"
+.global sDvdAramAsyncList__16JKRDvdAramRipper
+sDvdAramAsyncList__16JKRDvdAramRipper:
+	.skip 0xC

@@ -222,5 +222,11 @@ __vt__9JKRThread:
   .4byte run__9JKRThreadFv
 
 .section .bss, "wa"  # 0x803E6000 - 0x80408AC0
+.balign 8
 "@25":
 	.skip 0x10
+
+.section .bss.extra, "wa"
+.global sThreadList__9JKRThread
+sThreadList__9JKRThread:
+	.skip 0xC

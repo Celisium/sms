@@ -371,3 +371,11 @@ lbl_constructor:
 .section .bss, "wa"  # 0x803E6000 - 0x80408AC0
 "@60":
 	.skip 0x10
+
+.section .bss.extra, "wa"
+.global sAramPieceCommandList__12JKRAramPiece
+sAramPieceCommandList__12JKRAramPiece:
+	.skip 0x24
+.global mMutex__12JKRAramPiece
+mMutex__12JKRAramPiece:
+	.skip 0x18

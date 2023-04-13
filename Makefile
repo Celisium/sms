@@ -101,7 +101,7 @@ endif
 # hardcoded flags
 $(BUILD_DIR)/src/System/FlagManager.o:     FILE_UNIQUE_CFLAGS = -opt all,nostrength -inline all,level=1,deferred
 $(BUILD_DIR)/src/System/ParamInst.o:       FILE_UNIQUE_CFLAGS = -use_lmw_stmw=off
-$(BUILD_DIR)/src/JSystem/%.o:              FILE_UNIQUE_CFLAGS = -use_lmw_stmw=off -RTTI off -O4,p
+$(BUILD_DIR)/src/JSystem/%.o:              FILE_UNIQUE_CFLAGS = -use_lmw_stmw=off -RTTI off -inline on,auto -O4,p
 $(BUILD_DIR)/src/JSystem/JSUList.o:        FILE_UNIQUE_CFLAGS = -inline on,auto -O4,p
 $(BUILD_DIR)/src/os/__start.o:             FILE_UNIQUE_CFLAGS = -inline on,auto -O4,p
 

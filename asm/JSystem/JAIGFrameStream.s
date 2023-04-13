@@ -2338,3 +2338,8 @@ old_dspside$839:
 	.skip 0x4
 init$840:
 	.skip 0x4
+
+.section .bss.extra, "wa"
+.global streamHeap__Q27JAInter9StreamLib
+streamHeap__Q27JAInter9StreamLib:
+	.skip 0x14

@@ -1978,3 +1978,8 @@ mStrBuffSize__8J2DPrint:
 	.skip 0x4
 mBufferNotEnough__8J2DPrint:
 	.skip 0x4
+
+.section .bss.extra, "wa"
+.global mMutex__8J2DPrint
+mMutex__8J2DPrint:
+	.skip 0x18

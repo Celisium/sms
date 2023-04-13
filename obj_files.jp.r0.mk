@@ -12,7 +12,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JKRExpHeap.o                             \
     $(BUILD_DIR)/asm/JSystem/JKRFileCache.o                           \
     $(BUILD_DIR)/asm/JSystem/JKRFileFinder.o                          \
-    $(BUILD_DIR)/asm/JSystem/JKRFileLoader.o                          \
+    $(BUILD_DIR)/src/JSystem/JKernel/JKRFileLoader.o                  \
     $(BUILD_DIR)/src/JSystem/JKernel/JKRHeap.o                        \
     $(BUILD_DIR)/asm/JSystem/JKRMemArchive.o                          \
     $(BUILD_DIR)/asm/JSystem/JKRSolidHeap.o                           \
@@ -213,7 +213,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/MSL_C.PPCEABI.bare.H/ansi_fp.o                   \
     $(BUILD_DIR)/asm/MSL_C.PPCEABI.bare.H/buffer_io.o                 \
     $(BUILD_DIR)/asm/MSL_C.PPCEABI.bare.H/critical_regions.ppc_eabi.o \
-    $(BUILD_DIR)/asm/MSL_C.PPCEABI.bare.H/ctype.o                     \
+    $(BUILD_DIR)/src/MSL_C.PPCEABI.bare.H/ctype.o                     \
     $(BUILD_DIR)/asm/MSL_C.PPCEABI.bare.H/direct_io.o                 \
     $(BUILD_DIR)/asm/MSL_C.PPCEABI.bare.H/errno.o                     \
     $(BUILD_DIR)/asm/MSL_C.PPCEABI.bare.H/mbstring.o                  \
@@ -735,5 +735,4 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/Animal/AnimalNerve.o                             \
     $(BUILD_DIR)/asm/Animal/Bird.o                                    \
     $(BUILD_DIR)/asm/Animal/BeeHive.o                                 \
-    $(BUILD_DIR)/asm/Animal/Butterfly.o                               \
-    $(BUILD_DIR)/asm/JSystem/bss_extras.o
+    $(BUILD_DIR)/asm/Animal/Butterfly.o                               

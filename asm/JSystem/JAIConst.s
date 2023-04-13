@@ -57,3 +57,17 @@ sCInfos_0__8JAIConst:
 .global random__8JAIConst
 random__8JAIConst:
 	.skip 0x8
+
+.section .bss.extra, "wa"
+.global nullActor__8JAIConst
+nullActor__8JAIConst:
+	.skip 0x58
+.global camMtx__8JAIConst
+camMtx__8JAIConst:
+	.skip 0x30
+.global camTrans__8JAIConst
+camTrans__8JAIConst:
+	.skip 0xC
+.global camPreTrans__8JAIConst
+camPreTrans__8JAIConst:
+	.skip 0xC

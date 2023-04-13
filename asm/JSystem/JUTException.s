@@ -2188,6 +2188,7 @@ __vt__12JUTException:
   .4byte run__12JUTExceptionFv
 
 .section .sdata, "wa"  # 0x80408AC0 - 0x804097C0
+.balign 8
 sMessageBuffer__12JUTException:
   .4byte 0
   .4byte 0
@@ -2244,3 +2245,8 @@ msr__12JUTException:
 	.skip 0x4
 fpscr__12JUTException:
 	.skip 0x4
+
+.section .bss.extra, "wa"
+.global sMapFileList__12JUTException
+sMapFileList__12JUTException:
+	.skip 0xC

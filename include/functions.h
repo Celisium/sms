@@ -6,6 +6,7 @@ extern "C" {
 #endif // __cplusplus
 
 extern int strcmp(const char* leftStr, const char* rightStr);
+extern char* strcpy(char* dst, const char* src);
 
 #ifdef __cplusplus
 }

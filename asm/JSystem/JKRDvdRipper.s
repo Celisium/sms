@@ -888,3 +888,8 @@ readCount:
 	.skip 0x4
 maxDest:
 	.skip 0x4
+
+.section .bss.extra, "wa"
+.global sDvdAsyncList__12JKRDvdRipper
+sDvdAsyncList__12JKRDvdRipper:
+	.skip 0xC

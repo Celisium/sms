@@ -1811,3 +1811,17 @@ j3dDefaultZModeID:
 "@981":
 	.4byte 0x43300000
 	.4byte 0x80000000
+
+.section .bss.extra, "wa"
+.global j3dTexCoordTable
+j3dTexCoordTable:
+	.skip 0x2528
+.global j3dTevSwapTableTable
+j3dTevSwapTableTable:
+	.skip 0x400
+.global j3dAlphaCmpTable
+j3dAlphaCmpTable:
+	.skip 0x300
+.global j3dZModeTable
+j3dZModeTable:
+	.skip 0x60

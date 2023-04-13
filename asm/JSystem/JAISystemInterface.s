@@ -684,3 +684,8 @@ lbl_constructor:
 .section .bss, "wa"  # 0x803E6000 - 0x80408AC0
 "@557":
 	.skip 0x10
+
+.section .bss.extra, "wa"
+.global systemPortCmd__18JAISystemInterface
+systemPortCmd__18JAISystemInterface:
+	.skip 0x18

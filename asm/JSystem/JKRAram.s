@@ -1169,3 +1169,8 @@ readCount:
 	.skip 0x4
 maxDest:
 	.skip 0x8
+
+.section .bss.extra, "wa"
+.global sAramCommandList__7JKRAram
+sAramCommandList__7JKRAram:
+	.skip 0xC

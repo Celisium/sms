@@ -3026,3 +3026,8 @@ _dinfo$1264:
 	.skip 0x4
 _info$1317:
 	.skip 0x8
+
+.section .bss.extra, "wa"
+.global JAInullCamera
+JAInullCamera:
+	.skip 0xC

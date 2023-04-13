@@ -361,3 +361,17 @@ first$120:
 	.skip 0x4
 init$121:
 	.skip 0x4
+
+.section .bss.extra, "wa"
+.global jac_audioThread__Q28JASystem11AudioThread
+jac_audioThread__Q28JASystem11AudioThread:
+	.skip 0x2640
+.global jac_audioStack__Q28JASystem11AudioThread
+jac_audioStack__Q28JASystem11AudioThread:
+	.skip 0x1000
+.global jac_dvdThread__Q28JASystem11AudioThread
+jac_dvdThread__Q28JASystem11AudioThread:
+	.skip 0x320
+.global jac_dvdStack__Q28JASystem11AudioThread
+jac_dvdStack__Q28JASystem11AudioThread:
+	.skip 0x1000
