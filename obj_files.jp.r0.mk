@@ -67,7 +67,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/J3DDrawBuffer.o                          \
     $(BUILD_DIR)/asm/JSystem/J3DMaterialAnm.o                         \
     $(BUILD_DIR)/asm/JSystem/std-vector.o                             \
-    $(BUILD_DIR)/asm/JSystem/JKRAramBlock.o                           \
+    $(BUILD_DIR)/src/JSystem/JKernel/JKRAramBlock.o                   \
     $(BUILD_DIR)/asm/JSystem/JKRAramPiece.o                           \
     $(BUILD_DIR)/asm/JSystem/JKRAramStream.o                          \
     $(BUILD_DIR)/asm/JSystem/JUTAssert.o                              \

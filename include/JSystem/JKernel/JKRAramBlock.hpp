@@ -20,7 +20,7 @@ class JKRAramBlock {
 	u32 size;
 	u32 free_size;
 	u8 group_id;
-	u8 is_temporary;
+	bool is_temporary;
 
 };
 

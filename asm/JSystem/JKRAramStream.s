@@ -395,6 +395,7 @@ __ct__20JKRAramStreamCommandFv:
 	.4byte 0
 
 .section .data, "wa"  # 0x803A8380 - 0x803E6000
+.balign 8
 sMessageBuffer__13JKRAramStream:
   .4byte 0
   .4byte 0
