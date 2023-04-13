@@ -75,4 +75,6 @@ typedef u32 unknown;
 		while (true) { }  \
 	}
 
+#define UINT32_MAX 0xFFFFFFFF
+
 #endif

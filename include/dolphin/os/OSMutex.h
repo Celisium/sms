@@ -1,18 +1,19 @@
 #ifndef DOLPHIN_OS_OSMUTEX_H
-#define DOLPHIN_OS_MUTEX_H
+#define DOLPHIN_OS_OSMUTEX_H
 
+#include "dolphin/types.h"
 #include "dolphin/os/OSThread.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct OSMutex {
+struct OSMutex {
 	/* 0x00 */ OSThreadQueue queue;
 	/* 0x08 */ OSThread* thread;
 	/* 0x0C */ s32 count;
 	/* 0x10 */ OSMutexLink link;
-} OSMutex;
+};
 
 void OSInitMutex(OSMutex*);
 void OSLockMutex(OSMutex*);

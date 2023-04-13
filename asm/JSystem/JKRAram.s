@@ -1115,6 +1115,7 @@ lbl_80370004:
 	.balign 4
 
 .section .data, "wa"  # 0x803A8380 - 0x803E6000
+.balign 8
 sMessageBuffer__7JKRAram:
   .4byte 0
   .4byte 0
@@ -1138,6 +1139,7 @@ __vt__7JKRAram:
   .4byte run__7JKRAramFv
 
 .section .bss, "wa"  # 0x803E6000 - 0x80408AC0
+.balign 8
 "@60":
 	.skip 0x10
 

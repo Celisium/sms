@@ -1,6 +1,8 @@
 #ifndef DOLPHIN_OS_OSTHREAD_H
 #define DOLPHIN_OS_OSTHREAD_H
 
+#include "dolphin/os/OSContext.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif

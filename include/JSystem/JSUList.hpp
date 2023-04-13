@@ -119,6 +119,7 @@ class JSUList : public JSUPtrList {
 	~JSUList() {}
 
 	JSULink<T>* getFirst() const { return (JSULink<T>*)this->first; }
+	JSULink<T>* getLast() const { return (JSULink<T>*)this->last; }
 
 	bool append(JSULink<T>* link) { return this->JSUPtrList::append((JSUPtrLink*)link); }
 

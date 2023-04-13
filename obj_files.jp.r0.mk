@@ -2,7 +2,7 @@ O_FILES :=                                                            \
 	$(BUILD_DIR)/src/main.o                                           \
     $(BUILD_DIR)/asm/JSystem/JKRArchivePri.o                          \
     $(BUILD_DIR)/asm/JSystem/JKRAramArchive.o                         \
-    $(BUILD_DIR)/asm/JSystem/JKRAramHeap.o                            \
+    $(BUILD_DIR)/src/JSystem/JKernel/JKRAramHeap.o                    \
     $(BUILD_DIR)/asm/JSystem/JKRAram.o                                \
     $(BUILD_DIR)/asm/JSystem/JKRArchivePub.o                          \
     $(BUILD_DIR)/asm/JSystem/JKRCompArchive.o                         \
