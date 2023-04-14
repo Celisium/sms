@@ -543,5 +543,6 @@ __vt__9J3DPacket:
   .4byte __dt__9J3DPacketFv
 
 .section .sbss, "wa"  # 0x804097C0 - 0x8040B45C
+.balign 8
 sInterruptFlag__13J3DDrawPacket:
 	.skip 0x8

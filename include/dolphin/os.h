@@ -29,17 +29,13 @@ typedef struct OSMessageQueue {
 	char filler[32];
 } OSMessageQueue;
 
-// TODO: Determine size
-typedef struct OSMessage {
-	void* message;
-} OSMessage;
-
+typedef void* OSMessage;
 #define OS_MESSAGE_NON_BLOCKING 0
 #define OS_MESSAGE_BLOCKING     1
 
 void OSInitMessageQueue(OSMessageQueue* queue, OSMessage* msgSlots, int slotCount);
-BOOL OSSendMessage(OSMessageQueue* queue, void* message, int flags);
-BOOL OSReceiveMessage(OSMessageQueue* queue, void* msg, int flags);
+BOOL OSSendMessage(OSMessageQueue* queue, OSMessage message, int flags);
+BOOL OSReceiveMessage(OSMessageQueue* queue, OSMessage* msg, int flags);
 
 // OSArena
 extern void* __OSArenaHi;

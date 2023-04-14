@@ -7,18 +7,6 @@ class JKRThread : public JKRDisposer {
 
 	public:
 
-	class TLoad {
-		public:
-
-		TLoad() {}
-
-		bool valid;
-		u32 cost;
-		u32 switch_count;
-		OSTick last_tick;
-		s32 thread_id;
-	};
-
 	JKRThread(u32, int, int);
 
 	virtual ~JKRThread();
@@ -33,9 +21,6 @@ class JKRThread : public JKRDisposer {
 	s32 message_count;
 	void* stack_memory;
 	u32 stack_size;
-	TLoad load_info;
-	JKRHeap* current_heap;
-	s32 current_heap_error;
 
 	static void* start(void*);
 	

@@ -1,6 +1,6 @@
 #ifndef JSYSTEM_JKERNEL_JKRDVDRIPPER_H
 #define JSYSTEM_JKERNEL_JKRDVDRIPPER_H
 
-
+enum JKRExpandSwitch {};
 
 #endif

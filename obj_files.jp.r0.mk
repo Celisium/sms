@@ -59,7 +59,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JKRDvdRipper.o                           \
     $(BUILD_DIR)/asm/JSystem/J2DGrafContext.o                         \
     $(BUILD_DIR)/asm/JSystem/JKRDvdAramRipper.o                       \
-    $(BUILD_DIR)/asm/JSystem/JKRDecomp.o                              \
+    $(BUILD_DIR)/src/JSystem/JKernel/JKRDecomp.o                      \
     $(BUILD_DIR)/asm/JSystem/J2DOrthoGraph.o                          \
     $(BUILD_DIR)/asm/JSystem/J3DVertex.o                              \
     $(BUILD_DIR)/asm/JSystem/J3DPacket.o                              \

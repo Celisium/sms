@@ -102,6 +102,8 @@ class JKRHeap : public JKRDisposer {
 	static JKRHeap* sRootHeap;
 	static JKRErrorHandler mErrorHandler;
 
+	static JKRHeap* getSystemHeap() { return sSystemHeap; }
+
 };
 
 void JKRDefaultMemoryErrorRoutine(void* heap, size_t size, int alignment);
