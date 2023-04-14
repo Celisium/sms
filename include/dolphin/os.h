@@ -28,15 +28,16 @@ void OSPanic(const char* file, int line, const char* message, ...);
 typedef struct OSMessageQueue {
 	char filler[32];
 } OSMessageQueue;
+
+// TODO: Determine size
 typedef struct OSMessage {
 	void* message;
-	u32 args[3];
-};
+} OSMessage;
 
 #define OS_MESSAGE_NON_BLOCKING 0
 #define OS_MESSAGE_BLOCKING     1
 
-void OSInitMessageQueue(OSMessageQueue* queue, void** msgSlots, int slotCount);
+void OSInitMessageQueue(OSMessageQueue* queue, OSMessage* msgSlots, int slotCount);
 BOOL OSSendMessage(OSMessageQueue* queue, void* message, int flags);
 BOOL OSReceiveMessage(OSMessageQueue* queue, void* msg, int flags);
 
@@ -95,7 +96,11 @@ void LCFlushQueue(void);
 
 #define LCGetBase() ((void*)LC_BASE)
 
-u64 OSGetTime();
+typedef u64 OSTime;
+typedef u32 OSTick;
+
+OSTime OSGetTime();
+OSTick OSGetTick();
 
 #define HW_REG(reg, type) *(volatile type*)(uintptr_t)(reg) // manually added
 

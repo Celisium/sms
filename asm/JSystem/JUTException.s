@@ -2221,6 +2221,7 @@ sMessageBuffer__12JUTException:
 	.4byte 0x40C00000
 
 .section .bss, "wa"  # 0x803E6000 - 0x80408AC0
+.balign 8
 exCallbackObject:
 	.skip 0x14
 "@1483":

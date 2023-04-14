@@ -31,7 +31,7 @@ import math
 #                                             #
 ###############################################
 
-DOL_PATH = "baserom.dol"
+DOL_PATH = "baserom.jp.r0.dol"
 MAP_PATH = "build/sms.jp.r0/sms.jp.r0.MAP"
 
 MEM1_HI = 0x81200000
