@@ -40,7 +40,21 @@ class JKRAramPiece {
 
 	public:
 
+	struct Message {
+		s32 unknown_00;
+		JKRAMCommand* command;
+	};
+
 	static void sendCommand(JKRAMCommand*);
+	static inline JKRAMCommand* prepareCommand(int, u32, u32, u32, JKRAramBlock*, JKRAMCommand::AsyncCallback);
+	static JKRAMCommand* orderAsync(int, u32, u32, u32, JKRAramBlock*, JKRAMCommand::AsyncCallback);
+	static inline BOOL sync(JKRAMCommand*, int);
+	static BOOL orderSync(int, u32, u32, u32, JKRAramBlock*);
+	static void startDMA(JKRAMCommand*);
+	static void doneDMA(u32);
+
+	static JSUList<JKRAMCommand> sAramPieceCommandList;
+	static OSMutex mMutex;
 
 };
 

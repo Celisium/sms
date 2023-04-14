@@ -52,6 +52,7 @@ lbl_8003ADFC:
 	.4byte 0
 
 .section .bss, "wa"  # 0x803E6000 - 0x80408AC0
+.balign 8
 "sMessageFileLine__Q212JUTAssertion9@unnamed@":
 	.skip 0x40
 "sMessageString__Q212JUTAssertion9@unnamed@":

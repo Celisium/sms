@@ -20,6 +20,8 @@ class JKRAram : public JKRThread {
 	static void aramToMainRam(u32, u8*, u32, JKRExpandSwitch, u32, JKRHeap*, int, u32*);
 	static void aramToMainRam(JKRAramBlock*, u8*, u32, u32, JKRExpandSwitch, u32, JKRHeap*, int, u32*);
 
+	static OSMessageQueue sMessageQueue;
+
 };
 
 void JKRDecompressFromAramToMainRam(u32, void*, u32, u32, u32);
