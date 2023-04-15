@@ -27,7 +27,8 @@ s32 JSUOutputStream::skip(s32 length, s8 fill) {
 	return i;
 }
 
-void JSURandomOutputStream::seek(s32 pos, JSUStreamSeekFrom whence) {
-	this->seekPos(pos, whence);
+s32 JSURandomOutputStream::seek(s32 pos, JSUStreamSeekFrom whence) {
+	s32 new_pos = this->seekPos(pos, whence);
 	this->clear_eof();
+	return new_pos;
 }

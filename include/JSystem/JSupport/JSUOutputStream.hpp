@@ -24,9 +24,9 @@ class JSURandomOutputStream: public JSUOutputStream {
 
 	virtual s32 getLength() const = 0;
 	virtual s32 getPosition() const = 0;
-	virtual void seek(s32 pos, JSUStreamSeekFrom whence);
+	virtual s32 seek(s32 pos, JSUStreamSeekFrom whence);
 	virtual s32 getAvailable() const { return this->getLength() - this->getPosition(); }
-	virtual void seekPos(s32 pos, JSUStreamSeekFrom whence) = 0;
+	virtual s32 seekPos(s32 pos, JSUStreamSeekFrom whence) = 0;
 
 };
 

@@ -203,6 +203,7 @@ getPosition__18JSUFileInputStreamCFv:
 
 .section .data, "wa"  # 0x803A8380 - 0x803E6000
 .global __vt__18JSUFileInputStream
+.balign 8
 __vt__18JSUFileInputStream:
   .4byte 0
   .4byte 0
