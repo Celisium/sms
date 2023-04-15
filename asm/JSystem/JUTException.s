@@ -2154,6 +2154,7 @@ lbl_constructor:
 	.asciz "  [%08X]: .%s [%08X: %XH]\n  %s\n"
 
 .section .data, "wa"  # 0x803A8380 - 0x803E6000
+.balign 8
 sMessageQueue__12JUTException:
   .4byte 0
   .4byte 0

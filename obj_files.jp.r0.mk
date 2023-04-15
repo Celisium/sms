@@ -22,7 +22,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/src/JSystem/JSupport/JSUInputStream.o                \
     $(BUILD_DIR)/src/JSystem/JSupport/JSUList.o                       \
     $(BUILD_DIR)/src/JSystem/JSupport/JSUMemoryStream.o               \
-    $(BUILD_DIR)/asm/JSystem/JSUFileStream.o                          \
+    $(BUILD_DIR)/src/JSystem/JSupport/JSUFileStream.o                 \
     $(BUILD_DIR)/asm/JSystem/JUTException.o                           \
     $(BUILD_DIR)/asm/JSystem/JUTDirectPrint.o                         \
     $(BUILD_DIR)/asm/JSystem/JUTDbPrint.o                             \
