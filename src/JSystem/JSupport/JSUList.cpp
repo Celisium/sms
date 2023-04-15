@@ -1,7 +1,7 @@
 #include "dolphin.h"
 #include "types.h"
 
-#include "JSystem/JSUList.hpp"
+#include "JSystem/JSupport/JSUList.hpp"
 
 JSUPtrLink::JSUPtrLink(void* val)
 {

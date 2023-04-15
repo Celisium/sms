@@ -3,7 +3,7 @@
 
 #include "dolphin.h"
 
-#include "JSystem/JSUMemoryStream.hpp"
+#include "JSystem/JSupport/JSUMemoryStream.hpp"
 #include "JSystem/JDrama/JDRGraphics.hpp"
 
 namespace JDrama {

@@ -5,7 +5,7 @@
 #include "types.h"
 
 #include "JSystem/JDrama/JDRViewObj.hpp"
-#include "JSystem/JSUInputStream.hpp"
+#include "JSystem/JSupport/JSUInputStream.hpp"
 #include "JSystem/JGeometry.hpp"
 
 namespace JDrama {

@@ -258,6 +258,7 @@ getPosition__20JSUMemoryInputStreamCFv:
 
 .section .data, "wa"  # 0x803A8380 - 0x803E6000
 .global __vt__21JSUMemoryOutputStream
+.balign 8
 __vt__21JSUMemoryOutputStream:
   .4byte 0
   .4byte 0

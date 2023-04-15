@@ -1,7 +1,7 @@
 #ifndef JSYSTEM_JDRNAMEREFGEN_H
 #define JSYSTEM_JDRNAMEREFGEN_H
 
-#include "JSystem/JSUMemoryStream.hpp"
+#include "JSystem/JSupport/JSUMemoryStream.hpp"
 #include "JSystem/JDrama/JDRNameRef.hpp"
 
 namespace JDrama {

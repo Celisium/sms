@@ -1,7 +1,7 @@
 #ifndef JSYSTEM_JKERNEL_JKRDISPOSER_H
 #define JSYSTEM_JKERNEL_JKRDISPOSER_H
 
-#include "JSystem/JSUList.hpp"
+#include "JSystem/JSupport/JSUList.hpp"
 
 class JKRHeap;
 

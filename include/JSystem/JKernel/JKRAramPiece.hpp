@@ -2,7 +2,7 @@
 #define JSYSTEM_JKERNEL_JKRARAMPIECE_H
 
 #include "dolphin/ar/arq.h"
-#include "JSystem/JSUList.hpp"
+#include "JSystem/JSupport/JSUList.hpp"
 #include "JSystem/JKernel/JKRAramBlock.hpp"
 #include "JSystem/JKernel/JKRDecomp.hpp"
 

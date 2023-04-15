@@ -4,7 +4,7 @@
 #include "dolphin.h"
 
 #include "JSystem/JKernel/JKRHeap.hpp"
-#include "JSystem/JSUMemoryStream.hpp"
+#include "JSystem/JSupport/JSUMemoryStream.hpp"
 
 class TFlagManager {
     public:
