@@ -3,12 +3,6 @@
 
 #include "JSystem/JSupport/JSUIosBase.hpp"
 
-enum JSUStreamSeekFrom {
-	JSUSTREAM_SEEK_SET,
-	JSUSTREAM_SEEK_CUR,
-	JSUSTREAM_SEEK_END
-};
-
 class JSUInputStream : public JSUIosBase {
 
 	public:

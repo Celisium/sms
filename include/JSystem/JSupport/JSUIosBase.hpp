@@ -1,7 +1,13 @@
 #ifndef JSYSTEM_JSUPPORT_JSUIOSBASE_H
-#define JSYSTEM_JSUPPORT_JSUISOBASE_H
+#define JSYSTEM_JSUPPORT_JSUIOSBASE_H
 
 #include "dolphin/types.h"
+
+enum JSUStreamSeekFrom {
+	JSUSTREAM_SEEK_SET,
+	JSUSTREAM_SEEK_CUR,
+	JSUSTREAM_SEEK_END
+};
 
 class JSUIosBase {
 

@@ -18,7 +18,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JKRSolidHeap.o                           \
     $(BUILD_DIR)/asm/JSystem/JKRStdHeap.o                             \
     $(BUILD_DIR)/src/JSystem/JKernel/JKRThread.o                      \
-    $(BUILD_DIR)/asm/JSystem/JSUOutputStream.o                        \
+    $(BUILD_DIR)/src/JSystem/JSupport/JSUOutputStream.o               \
     $(BUILD_DIR)/src/JSystem/JSupport/JSUInputStream.o                \
     $(BUILD_DIR)/src/JSystem/JSupport/JSUList.o                       \
     $(BUILD_DIR)/asm/JSystem/JSUMemoryStream.o                        \
