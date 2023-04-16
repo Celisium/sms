@@ -69,7 +69,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/std-vector.o                             \
     $(BUILD_DIR)/src/JSystem/JKernel/JKRAramBlock.o                   \
     $(BUILD_DIR)/src/JSystem/JKernel/JKRAramPiece.o                   \
-    $(BUILD_DIR)/asm/JSystem/JKRAramStream.o                          \
+    $(BUILD_DIR)/src/JSystem/JKernel/JKRAramStream.o                  \
     $(BUILD_DIR)/asm/JSystem/JUTAssert.o                              \
     $(BUILD_DIR)/asm/JSystem/JUTVideo.o                               \
     $(BUILD_DIR)/asm/JSystem/JUTResFont.o                             \

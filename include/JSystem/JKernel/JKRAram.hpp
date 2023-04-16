@@ -2,6 +2,7 @@
 #define JSYSTEM_JKERNEL_JKRARAM_H
 
 #include "JSystem/JKernel/JKRAramBlock.hpp"
+#include "JSystem/JKernel/JKRAramPiece.hpp"
 #include "JSystem/JKernel/JKRDvdRipper.hpp"
 #include "JSystem/JKernel/JKRThread.hpp"
 
