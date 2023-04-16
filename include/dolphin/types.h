@@ -63,6 +63,7 @@ typedef u32 unknown;
 #define ALIGN_PREV(X, N) ((X) & ~((N)-1))
 // Align X to the next N bytes (N must be power of two)
 #define ALIGN_NEXT(X, N) ALIGN_PREV(((X) + (N)-1), N)
+#define IS_ALIGNED(X, N) ((X & ((N)-1)) == 0)
 
 // For functions that return 0 on a success and -1 on failure
 #ifndef EXIT_SUCCESS

@@ -106,6 +106,10 @@ class JKRHeap : public JKRDisposer {
 
 };
 
+inline void* JKRAllocFromHeap(JKRHeap* heap, u32 size, int alignment) {
+	return JKRHeap::alloc(size, alignment, heap);
+}
+
 void JKRDefaultMemoryErrorRoutine(void* heap, size_t size, int alignment);
 
 #endif

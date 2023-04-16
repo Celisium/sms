@@ -5,7 +5,7 @@
 #include "JSystem/JDrama/JDRViewObj.hpp"
 #include "JSystem/JStage/JSGAmbientLight.hpp"
 #include "JSystem/JStage/JSGLight.hpp"
-#include "JSystem/JUTColor.hpp"
+#include "JSystem/JUtility/JUTColor.hpp"
 
 namespace JDrama {
 

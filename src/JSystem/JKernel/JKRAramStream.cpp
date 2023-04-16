@@ -47,10 +47,6 @@ s32 JKRAramStream::readFromAram() {
 	return 1;
 }
 
-inline void* allocFromHeapInline(JKRHeap* heap, u32 size, int alignment) {
-    return JKRHeap::alloc(size, alignment, heap);
-}
-
 s32 JKRAramStream::writeToAram(JKRAramStreamCommand* command) {
 
 	u32 buffer_size;
@@ -77,9 +73,9 @@ s32 JKRAramStream::writeToAram(JKRAramStreamCommand* command) {
 		buffer_size = !buffer_size ? 0x8000 : buffer_size;
 
 		if (heap) {
-			buffer = command->transfer_buffer = (u8*)allocFromHeapInline(heap, buffer_size, -0x20);
+			buffer = command->transfer_buffer = (u8*)JKRAllocFromHeap(heap, buffer_size, -0x20);
 		} else {
-			buffer = command->transfer_buffer = (u8*)allocFromHeapInline(nullptr, buffer_size, -0x20);
+			buffer = command->transfer_buffer = (u8*)JKRAllocFromHeap(nullptr, buffer_size, -0x20);
 		}
 
 		command->transfer_buffer_size = buffer_size;

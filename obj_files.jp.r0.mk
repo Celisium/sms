@@ -26,7 +26,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JUTException.o                           \
     $(BUILD_DIR)/asm/JSystem/JUTDirectPrint.o                         \
     $(BUILD_DIR)/asm/JSystem/JUTDbPrint.o                             \
-    $(BUILD_DIR)/asm/JSystem/JUTFont.o                                \
+    $(BUILD_DIR)/src/JSystem/JUtility/JUTFont.o                       \
     $(BUILD_DIR)/asm/JSystem/JUTGamePad.o                             \
     $(BUILD_DIR)/asm/JSystem/JUTNameTab.o                             \
     $(BUILD_DIR)/asm/JSystem/JUTPalette.o                             \

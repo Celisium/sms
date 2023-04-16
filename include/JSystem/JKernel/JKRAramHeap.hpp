@@ -21,6 +21,7 @@ class JKRAramHeap : public JKRDisposer {
 	JKRAramBlock* alloc(u32, EAllocMode);
 	JKRAramBlock* allocFromHead(u32);
 	JKRAramBlock* allocFromTail(u32);
+	u8 getGroupID() const { return this->group_id; }
 
 	OSMutex mutex;
 	JKRHeap* heap;

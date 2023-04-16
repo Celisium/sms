@@ -35,6 +35,8 @@ class JKRAramStreamCommand {
 
 class JKRAramStream : public JKRThread {
 
+	public:
+
 	JKRAramStream(s32);
 
 	virtual ~JKRAramStream();

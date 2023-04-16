@@ -1,7 +1,7 @@
 #include "dolphin.h"
 #include "types.h"
 
-#include "JSystem/JUTNameTab.hpp"
+#include "JSystem/JUtility/JUTNameTab.hpp"
 
 template <typename T>
 void* JSUConvertOffsetToPtr(const void* ptr, const void* offset)
