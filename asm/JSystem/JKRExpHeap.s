@@ -2189,6 +2189,7 @@ getHeapType__10JKRExpHeapFv:
 
 .section .data, "wa"  # 0x803A8380 - 0x803E6000
 .global __vt__10JKRExpHeap
+.balign 8
 __vt__10JKRExpHeap:
   .4byte 0
   .4byte 0

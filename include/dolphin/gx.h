@@ -2,13 +2,12 @@
 #define _DOLPHIN_GX_H
 
 #include "dolphin/types.h"
+#include "dolphin/vi.h"
+#include "dolphin/mtx.h"
 
 #ifdef __cplusplus
 extern "C" {
-#endif // ifdef __cplusplus
-
-#include "Dolphin/vi.h"
-#include "Dolphin/mtx.h"
+#endif
 
 typedef u8 GXBool;
 

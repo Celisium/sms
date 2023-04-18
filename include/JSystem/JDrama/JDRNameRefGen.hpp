@@ -35,11 +35,13 @@ class TNameRefPtrListT : public TNameRef {
 
 	virtual ~TNameRefPtrListT();
 
-	virtual void load(JSUMemoryInputStream& arg_0);
+	virtual void load(JSUMemoryInputStream& stream);
 	virtual void loadAfter();
 	virtual TNameRef* searchF(u16 arg_0, const char* arg_1);
 
 };
+
+
 
 }
 

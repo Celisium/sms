@@ -57,4 +57,16 @@ class JKRDecomp : public JKRThread {
 
 };
 
+inline u32 JKRDecompExpandSize(u8* buffer) {
+	return (buffer[4] << 0x18) | (buffer[5] << 0x10) | (buffer[6] << 8) | buffer[7];
+}
+
+inline JKRCompression JKRCheckCompressed(u8* buffer) {
+	return JKRDecomp::checkCompressed(buffer);
+}
+
+inline void JKRDecompress(u8 * src, u8 * dst, u32 expand_size, u32 dst_size) {
+	JKRDecomp::orderSync(src, dst, expand_size, dst_size);
+}
+
 #endif

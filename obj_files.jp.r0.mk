@@ -8,7 +8,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JKRCompArchive.o                         \
     $(BUILD_DIR)/src/JSystem/JKernel/JKRDisposer.o                    \
     $(BUILD_DIR)/asm/JSystem/JKRDvdArchive.o                          \
-    $(BUILD_DIR)/asm/JSystem/JKRDvdFile.o                             \
+    $(BUILD_DIR)/src/JSystem/JKernel/JKRDvdFile.o                     \
     $(BUILD_DIR)/asm/JSystem/JKRExpHeap.o                             \
     $(BUILD_DIR)/asm/JSystem/JKRFileCache.o                           \
     $(BUILD_DIR)/asm/JSystem/JKRFileFinder.o                          \
@@ -441,7 +441,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/Strategic/question.o                             \
     $(BUILD_DIR)/asm/Strategic/smplcharacter.o                        \
     $(BUILD_DIR)/asm/Strategic/HitActor.o                             \
-    $(BUILD_DIR)/asm/Strategic/binder.o                               \
+    $(BUILD_DIR)/src/Strategic/binder.o                               \
     $(BUILD_DIR)/asm/Strategic/SharedParts.o                          \
     $(BUILD_DIR)/asm/Strategic/MirrorActor.o                          \
     $(BUILD_DIR)/asm/Player/Atom.o                                    \

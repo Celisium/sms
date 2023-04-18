@@ -58,4 +58,8 @@ class JKRAramPiece {
 
 };
 
+inline BOOL JKRAramPcs(int direction, u32 source, u32 destination, u32 length, JKRAramBlock* block) {
+	return JKRAramPiece::orderSync(direction, source, destination, length, block);
+}
+
 #endif

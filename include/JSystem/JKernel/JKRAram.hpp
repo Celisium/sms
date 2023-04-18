@@ -28,8 +28,8 @@ class JKRAram : public JKRThread {
 
 	static JKRAram* create(u32, u32, s32, s32, s32);
 	static JKRAramBlock* mainRamToAram(u8*, u32, u32, JKRExpandSwitch, u32, JKRHeap*, int);
-	static void aramToMainRam(u32, u8*, u32, JKRExpandSwitch, u32, JKRHeap*, int, u32*);
-	static void aramToMainRam(JKRAramBlock*, u8*, u32, u32, JKRExpandSwitch, u32, JKRHeap*, int, u32*);
+	static u8* aramToMainRam(u32 address, u8* buf, u32 size, JKRExpandSwitch expand_switch, u32 max_expand_size, JKRHeap* heap, int id, u32* out_size);
+	static u8* aramToMainRam(JKRAramBlock*, u8*, u32, u32, JKRExpandSwitch, u32, JKRHeap*, int, u32*);
 	static inline JKRAramHeap* getAramHeap() { return sAramObject->aram_heap; }
 
 	static OSMessage sMessageBuffer[4];
@@ -43,6 +43,6 @@ inline JKRAramBlock* JKRAllocFromAram(u32 size, JKRAramHeap::EAllocMode alloc_mo
 	return JKRAram::getAramHeap()->alloc(size, alloc_mode);
 }
 
-void JKRDecompressFromAramToMainRam(u32, void*, u32, u32, u32);
+s32 JKRDecompressFromAramToMainRam(u32, void*, u32, u32, u32);
 
 #endif

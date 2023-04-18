@@ -110,6 +110,18 @@ inline void* JKRAllocFromHeap(JKRHeap* heap, u32 size, int alignment) {
 	return JKRHeap::alloc(size, alignment, heap);
 }
 
+inline void* JKRAllocFromSysHeap(u32 size, int alignment) {
+	return JKRHeap::getSystemHeap()->alloc(size, alignment);
+}
+
+inline void JKRFreeToHeap(JKRHeap* heap, void* ptr) {
+	JKRHeap::free(ptr, heap);
+}
+
+inline void JKRFree(void* ptr) {
+	JKRHeap::free(ptr, nullptr);
+}
+
 void JKRDefaultMemoryErrorRoutine(void* heap, size_t size, int alignment);
 
 #endif

@@ -2,12 +2,11 @@
 #define _DOLPHIN_MTX_H
 
 #include "dolphin/types.h"
+#include "dolphin/vec.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif // ifdef __cplusplus
-
-#include "Dolphin/vec.h"
 
 // sizeof = 48 or 0x30
 typedef float Mtx[3][4];

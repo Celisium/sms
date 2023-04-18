@@ -8,24 +8,7 @@
 #include "JSystem/JDrama/JDRNameRef.hpp"
 #include "JSystem/JDrama/JDRPlacement.hpp"
 #include "Player/MarioInit.hpp"
-
-class THitActor : public JDrama::TActor {
-    public:
-        THitActor **collisions;
-        u16 colCount;
-        u16 colCapacity;
-        void *actorType; // ActorType
-
-        f32 attackRadius; // 0x50
-        f32 attackHeight;
-
-        f32 damageRadius;
-        f32 damageHeight;
-        
-        f32 entryRadius;
-
-        u32 _064;
-};
+#include "Strategic/HitActor.hpp"
 
 class TTakeActor : public THitActor {
     public:

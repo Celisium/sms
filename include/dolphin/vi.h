@@ -1,11 +1,11 @@
 #ifndef _DOLPHIN_VI_H
 #define _DOLPHIN_VI_H
 
+#include "dolphin/types.h"
+
 #ifdef __cplusplus
 extern "C" {
-#endif // ifdef __cplusplus
-
-#include "dolphin/types.h"
+#endif
 
 #define VI_DISPLAY_PIX_SZ 2
 

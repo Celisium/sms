@@ -1,6 +1,7 @@
 #ifndef _DOLPHIN_OS_H
 #define _DOLPHIN_OS_H
 
+#include "dolphin/dvd.h"
 #include "dolphin/types.h"
 #include "dolphin/os/OSContext.h"
 #include "dolphin/os/OSThread.h"
@@ -106,16 +107,6 @@ OSTick OSGetTick();
 // Rounds to nearest multiple of 20 upwards and downwards
 #define OSRoundUp32B(x)   (((u32)(x) + 0x1F) & ~(0x1F))
 #define OSRoundDown32B(x) (((u32)(x)) & ~(0x1F))
-
-typedef struct DVDDiskID {
-    /* 0x00 */ char game_name[4];
-    /* 0x04 */ char company[2];
-    /* 0x06 */ u8 disk_number;
-    /* 0x07 */ u8 game_version;
-    /* 0x08 */ u8 is_streaming;
-    /* 0x09 */ u8 streaming_buffer_size;
-    /* 0x0A */ u8 padding[22];
-} DVDDiskID;
 
 struct GLOBAL_MEMORY {
     DVDDiskID disk;
