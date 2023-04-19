@@ -26,10 +26,7 @@ class TNameRef {
 	virtual TNameRef* searchF(u16, const char*);
 
 	TNameRef() {}
-	TNameRef(const char* name) {
-		this->mName = name;
-		this->mKeyCode = calcKeyCode(name);
-	}
+	TNameRef(const char* name);
 
 	private:
 

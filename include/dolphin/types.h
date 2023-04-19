@@ -79,4 +79,9 @@ typedef u32 unknown;
 
 #define UINT32_MAX 0xFFFFFFFF
 
+// so intellisense stops complaining
+#ifndef __MWERKS__
+extern "C" double __frsqrte(double);
+#endif
+
 #endif

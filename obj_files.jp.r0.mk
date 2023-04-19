@@ -440,7 +440,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/Strategic/Strategy.o                             \
     $(BUILD_DIR)/asm/Strategic/question.o                             \
     $(BUILD_DIR)/asm/Strategic/smplcharacter.o                        \
-    $(BUILD_DIR)/asm/Strategic/HitActor.o                             \
+    $(BUILD_DIR)/src/Strategic/HitActor.o                             \
     $(BUILD_DIR)/src/Strategic/binder.o                               \
     $(BUILD_DIR)/asm/Strategic/SharedParts.o                          \
     $(BUILD_DIR)/asm/Strategic/MirrorActor.o                          \

@@ -41,8 +41,6 @@ class TNameRefPtrListT : public TNameRef {
 
 };
 
-
-
 }
 
 #endif

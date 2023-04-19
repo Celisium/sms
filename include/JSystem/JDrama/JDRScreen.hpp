@@ -16,6 +16,8 @@ class TCamConnecter : public JDrama::TViewConnecter {
 
 namespace JDrama {
 
+template <typename T> inline TFlagT<T>::TFlagT(T flag) : flag(flag) {}
+
 class TScreen : public TViewConnecter {
 
 	public:

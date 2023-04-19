@@ -10,7 +10,7 @@ class TActor : public TPlacement, public JStage::TActor {
 
 	public:
 	
-	TActor();
+	TActor(const char* name) : TPlacement(name), unknown_24(1.0f, 1.0f, 1.0f), unknown_30(0.0f, 0.0f, 0.0f), unknown_3C(nullptr), unknown_40(0) {}
 
 	virtual ~TActor() {}
 
