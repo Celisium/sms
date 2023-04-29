@@ -360,9 +360,9 @@ void JRNSetTevIndirect(GXTevStageID tev_stage, GXIndTexStageID ind_stage, GXIndT
 	);
 }
 
+// TODO: I've been able to get this one down to a couple of reg swaps.
 #ifdef MATCHING
 __declspec(section ".sdata2") static f32 literal_697 = 1024.0f;
-// TODO: I've been able to get this one down to a couple of reg swaps.
 #pragma push
 #pragma optimization_level 0
 #pragma optimizewithasm off

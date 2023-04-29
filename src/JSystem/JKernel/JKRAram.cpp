@@ -1,5 +1,6 @@
 #include "JSystem/JKernel/JKRAram.hpp"
 
+#include "bss_extra.hpp"
 #include "dolphin/ar/ar.h"
 #include "dolphin/ar/arq.h"
 #include "JSystem/JKernel/JKRAramHeap.hpp"
@@ -8,6 +9,22 @@
 
 OSMessage JKRAram::sMessageBuffer[4] = {};
 OSMessageQueue JKRAram::sMessageQueue = {};
+
+JKRAram* JKRAram::sAramObject;
+static u8* szpBuf;
+static u8* szpEnd;
+static u8* refBuf;
+static u8* refEnd;
+static u8* refCurrent;
+static u32 srcOffset;
+static u32 transLeft;
+static u8* srcLimit;
+static u8* srcAddress;
+static u32 fileOffset;
+static u32 readCount;
+static u32 maxDest;
+
+SECTION_BSS_EXTRA JSUList<JKRAMCommand> JKRAram::sAramCommandList;
 
 JKRAram* JKRAram::create(u32 aram_audio_buffer_size, u32 aram_audio_graph_size, s32 stream_priority, s32 decomp_priority, s32 piece_priority) {
 	if (!sAramObject) {
@@ -82,10 +99,9 @@ inline void checkOkAddress(u8* addr, u32 size, JKRAramBlock* block, u32 arg_4) {
 	}
 
 	if (block && !IS_ALIGNED((u32)(size + block->address), 0x20)) {
-		OSPanic("JKRAram.cpp", 227, ":::address not 32Byte aligned.");
+		OSPanic("JKRAram.cpp", 234, ":::address not 32Byte aligned.");
 	}
 }
-
 
 inline u8 getAramHeapGroupID() {
 	return JKRAram::getAramHeap()->getGroupID();
@@ -274,18 +290,47 @@ u8* JKRAram::aramToMainRam(u32 address, u8* buf, u32 size, JKRExpandSwitch expan
 
 }
 
-static u8* szpBuf;
-static u8* szpEnd;
-static u8* refBuf;
-static u8* refCurrent;
-static u8* refEnd;
-static u8* srcAddress;
-static u32 srcOffset;
-static u32 transLeft;
-static u8* srcLimit;
-static u32 fileOffset;
-static u32 readCount;
-static u32 maxDest;
+// TODO: This one is matched except for an instruction swap.
+#ifdef MATCHING
+#pragma push
+#pragma optimization_level 0
+#pragma optimizewithasm off
+extern "C" void aramToMainRam__7JKRAramFUlPUcUl15JKRExpandSwitchUlP7JKRHeapiPUl();
+asm u8* JKRAram::aramToMainRam(JKRAramBlock* block, u8* buf, u32 address, u32 offset, JKRExpandSwitch expand_switch, u32 arg_5, JKRHeap* heap, int arg_7, u32* out_size) {
+	nofralloc
+#include "not_matched/JKRAram_aramToMainRam.inc.s"
+}
+#pragma pop
+#else
+inline u32 calcAddress(u32 address, u32 block_size, u32 offset) {
+	if (offset + address > block_size) {
+		return block_size - offset;
+	} else {
+		return address;
+	}
+}
+
+u8* JKRAram::aramToMainRam(JKRAramBlock* block, u8* buf, u32 address, u32 offset, JKRExpandSwitch expand_switch, u32 arg_5, JKRHeap* heap, int arg_6, u32* out_size) {
+	if (out_size) {
+		*out_size = 0;
+	}
+
+	checkOkAddress(buf, offset, block, 1);
+
+	if (!block) {
+		OSPanic("JKRAram.cpp", 673, ":::Bad Aram Block specified.\n");
+	}
+
+	if (offset >= block->size) {
+		return nullptr;
+	}
+
+	u32 new_addr = (!address) ? block->size : address;
+	address = calcAddress(new_addr, block->size, offset);
+
+	return aramToMainRam(offset + block->address, buf, address, expand_switch, arg_5, heap, arg_6, out_size);
+}
+#endif
 
 static u8* firstSrcData();
 static int decompSZS_subroutine(u8* arg_0, u8* arg_1);
@@ -469,3 +514,8 @@ static u8* nextSrcData(u8* current) {
 
 	return dest;
 }
+
+#pragma force_active on
+const char unused_string_8036fffc[] = ":::Bad Aram Block specified.\n";
+const char unused_string_8037001c[] = "---------------- BAD SYNC. you'd set callback, but now call sync.\n";
+#pragma force_active reset

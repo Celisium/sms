@@ -2234,6 +2234,7 @@ __vt__10JKRExpHeap:
 	.4byte 0
 
 .section .sbss, "wa"  # 0x804097C0 - 0x8040B45C
+.balign 8
 whatdo:
 	.skip 0x4
 whatdo2:
