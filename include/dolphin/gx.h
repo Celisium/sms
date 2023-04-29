@@ -477,7 +477,6 @@ typedef struct _GXRenderModeObj {
 	u16 viWidth;
 	u16 viHeight;
 	VIXFBMode xFBmode;
-
 	u8 field_rendering;
 	u8 aa;
 	u8 sample_pattern[12][2];

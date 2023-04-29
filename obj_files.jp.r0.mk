@@ -100,7 +100,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/src/JSystem/JDrama/JDRScreen.o                       \
     $(BUILD_DIR)/asm/JSystem/JDRSmJ3DAct.o                            \
     $(BUILD_DIR)/asm/JSystem/JDRSmJ3DScn.o                            \
-    $(BUILD_DIR)/asm/JSystem/JDRVideo.o                               \
+    $(BUILD_DIR)/src/JSystem/JDrama/JDRVideo.o                        \
     $(BUILD_DIR)/src/JSystem/JDrama/JDRViewConnecter.o                \
     $(BUILD_DIR)/src/JSystem/JDrama/JDRViewObj.o                      \
     $(BUILD_DIR)/src/JSystem/JDrama/JDRViewport.o                     \
