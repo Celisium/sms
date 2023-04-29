@@ -38,7 +38,7 @@ const char* TNameRef::getType(JSUMemoryInputStream& arg_0, JSUMemoryInputStream&
     
 }
 
-void TNameRef::genObject(JSUMemoryInputStream& arg_0, JSUMemoryInputStream& arg_1) {
+TNameRef* TNameRef::genObject(JSUMemoryInputStream& arg_0, JSUMemoryInputStream& arg_1) {
 
 	s32 padding[1];
 	s32 var_20;
@@ -57,14 +57,14 @@ void TNameRef::genObject(JSUMemoryInputStream& arg_0, JSUMemoryInputStream& arg_
 
 	const char* temp2 = arg_1.readString();
 	TNameRefGen* instance = TNameRefGen::instance;
-	instance->getNameRef(temp2);
+	return instance->getNameRef(temp2);
 
 }
 
 TNameRef::~TNameRef() {}
 
-void* TNameRef::getType() const {
-	return nullptr;
+s32 TNameRef::getType() const {
+	return 0;
 }
 
 void TNameRef::load(JSUMemoryInputStream& arg_0) {
@@ -72,8 +72,8 @@ void TNameRef::load(JSUMemoryInputStream& arg_0) {
 	s32 padding;
 
 	arg_0.read(&sp14, 2);
-	this->mKeyCode = sp14;
-	this->mName = arg_0.readString();
+	this->key_code = sp14;
+	this->name = arg_0.readString();
 }
 
 void TNameRef::save(JSUMemoryOutputStream&) {}
@@ -82,7 +82,7 @@ void TNameRef::loadAfter() {}
 TNameRef* TNameRef::searchF(u16 arg_0, const char* arg_1) {
 	bool var_r31 = false;
 
-	if ((this->mKeyCode == arg_0) && (strcmp(this->mName, arg_1) == 0)) {
+	if ((this->key_code == arg_0) && (strcmp(this->name, arg_1) == 0)) {
 		var_r31 = 1;
 	}
 	if (var_r31) {

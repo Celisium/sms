@@ -91,7 +91,7 @@ ifeq ($(VERBOSE),0)
 # this set of LDFLAGS generates no warnings.
 LDFLAGS := $(MAPGEN) -fp hard -nodefaults -w off
 endif
-CFLAGS  := -Cpp_exceptions off -RTTI off -proc gekko -fp hard -O4 -nodefaults -enum int -rostr $(INCLUDES)
+CFLAGS  := -Cpp_exceptions off -RTTI off -proc gekko -fp hard -O4 -nodefaults -enum int -rostr -d MATCHING $(INCLUDES)
 
 ifeq ($(VERBOSE),0)
 # this set of ASFLAGS generates no warnings.
@@ -102,7 +102,7 @@ endif
 # TODO: some (most?) of these are probably more general
 $(BUILD_DIR)/src/System/FlagManager.o:     FILE_UNIQUE_CFLAGS = -opt all,nostrength -inline all,level=1,deferred
 $(BUILD_DIR)/src/System/ParamInst.o:       FILE_UNIQUE_CFLAGS = -use_lmw_stmw=off
-$(BUILD_DIR)/src/JSystem/%.o:              FILE_UNIQUE_CFLAGS = -use_lmw_stmw=off -RTTI off -inline on,auto -O4,p
+$(BUILD_DIR)/src/JSystem/%.o:              FILE_UNIQUE_CFLAGS = -inline auto -O4,p
 $(BUILD_DIR)/src/JSystem/JSUList.o:        FILE_UNIQUE_CFLAGS = -inline on,auto -O4,p
 $(BUILD_DIR)/src/Strategic/HitActor.o:     FILE_UNIQUE_CFLAGS = -inline on,auto -O4,p -fp_contract on
 $(BUILD_DIR)/src/os/__start.o:             FILE_UNIQUE_CFLAGS = -inline on,auto -O4,p

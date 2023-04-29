@@ -12,8 +12,8 @@ class TNameRefGen {
 
 	static TNameRefGen* instance;
 
-	virtual void load(JSUMemoryInputStream&);
-	virtual void getNameRef(const char*) const;
+	virtual TNameRef* load(JSUMemoryInputStream&);
+	virtual TNameRef* getNameRef(const char*) const;
 
 	TNameRef* getNameRef2(const char* str) const {
 

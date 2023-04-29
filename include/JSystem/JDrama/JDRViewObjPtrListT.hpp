@@ -2,13 +2,16 @@
 #define JSYSTEM_JDRAMA_JDRVIEWOBJPTRLISTT_H
 
 #include "JSystem/JDrama/JDRViewObj.hpp"
+#include "JSystem/JGadget/list.hpp"
 
 namespace JDrama {
 
 template <typename T, typename U>
-class TViewObjPtrListT : public TViewObj {
+class TViewObjPtrListT : public TViewObj, public JGadget::TList_pointer_void {
 
 	public:
+
+	TViewObjPtrListT(const char* name) : TViewObj(name), JGadget::TList_pointer_void(JGadget::TAllocator<void*>()) {}
 
 	virtual ~TViewObjPtrListT();
 

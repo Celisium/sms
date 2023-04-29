@@ -131,7 +131,7 @@ void TLightAry::setLightNum(s32 num_lights) {
 }
 
 template <typename T> inline TFlagT<T>::TFlagT(T flag) : flag(flag) {}
-inline TNameRef::TNameRef(const char* name) { this->mName = name; this->mKeyCode = calcKeyCode(name); }
+inline TNameRef::TNameRef(const char* name) { this->name = name; this->key_code = calcKeyCode(name); }
 TViewObj::TViewObj(const char* name) : TNameRef(name), unknown_0C(0) {}
 
 void TLightAry::perform(u32 arg_0, TGraphics* arg_1) {

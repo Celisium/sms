@@ -1,22 +1,22 @@
-#ifndef _DOLPHIN_VEC_H
-#define _DOLPHIN_VEC_H
+#ifndef DOLPHIN_VEC_H
+#define DOLPHIN_VEC_H
 
 #include "dolphin/types.h"
 
 #ifdef __cplusplus
 extern "C" {
-#endif // ifdef __cplusplus
+#endif
 
 typedef struct Vec {
-	float x;
-	float y;
-	float z;
+	f32 x;
+	f32 y;
+	f32 z;
 } Vec;
 
 void PSVECAdd(const Vec*, const Vec*, Vec*);
 void PSVECSubtract(const Vec*, const Vec*, Vec*);
 void PSVECNormalize(const Vec*, Vec*);
-float PSVECMag(const Vec*);
+f32 PSVECMag(const Vec*);
 void PSVECCrossProduct(const Vec*, const Vec*, Vec*);
 
 #ifdef __cplusplus

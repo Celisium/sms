@@ -265,8 +265,8 @@ typedef enum _GXTevStageID {
 typedef enum _GXTevRegID { GX_TEVREG0, GX_TEVREG1, GX_TEVREG2 } GXTevRegID;
 
 typedef enum _GXTexGenType {
-	GX_TG_MTX2X4,
-	GX_TG_MTX3X4,
+	GX_TG_MTX3x4,
+	GX_TG_MTX2x4,
 	GX_TG_BUMP0,
 	GX_TG_BUMP1,
 	GX_TG_BUMP2,
@@ -314,8 +314,8 @@ typedef enum _GXTexMapID {
 	GX_TEXMAP6, // Texture map ID 6.
 	GX_TEXMAP7, // Texture map ID 7.
 	GX_MAX_TEXMAP,
-	GX_TEXMAP_NULL, // No textures used.
-	GX_TEX_DISABLE  // No texture map look-up.
+	GX_TEXMAP_NULL = 0xFF, // No textures used.
+	GX_TEX_DISABLE = 0x100  // No texture map look-up.
 } GXTexMapID;
 
 typedef enum _GXTexCacheSize {
@@ -372,7 +372,7 @@ typedef enum _GXCompType {
 } GXCompType;
 
 // Names are guessed
-typedef enum _SDK_GXFogType {
+typedef enum _GXFogType {
 	GX_FOG_NONE   = 0,     // No fog.
 	GX_FOG_LINEAR = 2,     // Use linear fog density function.
 	                       // For perspective projection mode.
@@ -390,16 +390,16 @@ typedef struct _GXColor {
 	u8 r, g, b, a;
 } GXColor;
 
-typedef struct _SDK_GXColorS10 {
-	u16 r, g, b, a;
+typedef struct _GXColorS10 {
+	s16 r, g, b, a;
 } GXColorS10;
 
-typedef struct _SDK_GXFogAdjTable {
-	u16 _00[10];
+typedef struct _GXFogAdjTable {
+	u16 r[10];
 } GXFogAdjTable;
 
 // Compare types.
-typedef enum _SDK_GXCompare {
+typedef enum _GXCompare {
 	GX_NEVER,   // Always false.
 	GX_LESS,    //<
 	GX_EQUAL,   //=
@@ -411,7 +411,7 @@ typedef enum _SDK_GXCompare {
 } GXCompare;
 
 // Blending type.
-typedef enum _SDK_GXBlendMode {
+typedef enum _GXBlendMode {
 	GX_BM_NONE,     // No blending.
 	GX_BM_BLEND,    // Blending.
 	GX_BM_LOGIC,    // Logic operations.
@@ -420,7 +420,7 @@ typedef enum _SDK_GXBlendMode {
 } GXBlendMode;
 
 // Blending controls.
-typedef enum _SDK_GXBlendFactor {
+typedef enum _GXBlendFactor {
 	GX_BL_ZERO, // 0.0
 	GX_BL_ONE,  // 1.0
 	GX_BL_SRCCOL,
@@ -436,7 +436,7 @@ typedef enum _SDK_GXBlendFactor {
 
 // Logical operation types.
 // Source is the input coefficient and Destination is the output coefficient.
-typedef enum _SDK_GXLogicOp {
+typedef enum _GXLogicOp {
 	GX_LO_CLEAR,   // 0x00
 	GX_LO_AND,     // Source & Destination
 	GX_LO_REVAND,  // Source & ~Destination
@@ -456,7 +456,7 @@ typedef enum _SDK_GXLogicOp {
 } GXLogicOp;
 
 // Frame buffer pixel formats
-typedef enum _SDK_GXPixelFmt {
+typedef enum _GXPixelFmt {
 	GX_PF_RGB8_Z24,   // Non-antialiased (RGB 888).
 	GX_PF_RGBA6_Z24,  // Non-antialiased (RGBA 6666).
 	GX_PF_RGB565_Z16, // Anti-aliasing.
@@ -501,7 +501,7 @@ typedef struct GXTexObj {
 } GXTexObj;
 
 // Compressed Z format
-typedef enum _SDK_GXZFmt16 {
+typedef enum _GXZFmt16 {
 	GX_ZC_LINEAR, // 16-bit linear.
 	GX_ZC_NEAR,   // Compressed format (14e2) for smaller far/near ratio.
 	GX_ZC_MID,    // Compressed format (13e3) for medium far/near ratio.
@@ -570,16 +570,13 @@ void GXSaveGPFifo(GXFifoObj* fifo);
 
 void GXSetProjection(Mtx, u32);
 
-typedef u8 _GXTlut;
-typedef u8 _GXTlutFmt;
-
 /*
  * Names of texture lookup tables (TLUTs) in texture memory.
  * Each table GX_TLUT0 through GX_TLUT15 contains 256 entries, at 16 bits per
  * entry. Each table GX_BIGTLUT0 through BIGTLUT3 contains 1024 entries, at 16
  * bits per entry. Used for setting texture memory in the GXInit function.
  */
-typedef enum GXTlut {
+typedef enum _GXTlut {
 	GX_TLUT0, // TLUT (256 16-bit entries) ID 0.
 	GX_TLUT1,
 	GX_TLUT2,
@@ -603,12 +600,26 @@ typedef enum GXTlut {
 } GXTlut;
 
 // Texture lookup table (TLUT) formats.
-typedef enum GXTlutFmt {
+typedef enum _GXTlutFmt {
 	GX_TL_IA8,    // 16-bit intensity + alpha (8I+8A).
 	GX_TL_RGB565, // 16-bit RGB (R5+G6+B5).
 	GX_TL_RGB5A3 // When MSB=1, RGB555 format (opaque), and when MSB=0, RGBA4443
 	             // format (transparent).
 } GXTlutFmt;
+
+typedef enum _GXTlutSize {
+	GX_TLUT_16,
+	GX_TLUT_32,
+	GX_TLUT_64,
+	GX_TLUT_128,
+	GX_TLUT_256,
+	GX_TLUT_512,
+	GX_TLUT_1K,
+	GX_TLUT_2K,
+	GX_TLUT_4K,
+	GX_TLUT_8K,
+	GX_TLUT_16K
+} GXTlutSize;
 
 typedef struct GXTlutObj {
 	u32 _00; // _00
@@ -622,15 +633,15 @@ typedef struct GXTlutRegion {
 	u8 _04[0xC]; // _04
 } GXTlutRegion;
 
-typedef GXTlutRegion* GXTlutRegionCallback(_GXTlut);
+typedef GXTlutRegion* GXTlutRegionCallback(GXTlut);
 
-void GXInitTlutObj(GXTlutObj*, const u8*, _GXTlutFmt, u16);
+void GXInitTlutObj(GXTlutObj*, const u8*, GXTlutFmt, u16);
 // TODO: Params aren't fully worked out yet.
 void GXInitTlutRegion(u32*, int, u32);
-void GXLoadTlut(GXTlutObj*, _GXTlut);
+void GXLoadTlut(GXTlutObj*, GXTlut);
 void GXSetTlutRegionCallback(GXTlutRegionCallback*);
 
-GXTlutRegion* __GXDefaultTlutRegionCallback(_GXTlut);
+GXTlutRegion* __GXDefaultTlutRegionCallback(GXTlut);
 void GXInitTexObj(GXTexObj*, u32*, u16, u16, GXTexFmt, GXTexWrapMode,
                   GXTexWrapMode, GXBool);
 void GXInitTexObjLOD(GXTexObj*, GXTexFilter, GXTexFilter, float, float, float,
@@ -695,6 +706,101 @@ typedef enum _GXChannelID {
 	GX_COLOR_NULL
 } GXChannelID;
 
+typedef enum _GXTexMtxType {
+	GX_MTX3x4,
+	GX_MTX2x4
+} GXTexMtxType;
+
+typedef enum _GXColorSrc {
+	GX_SRC_REG,
+	GX_SRC_VTX
+} GXColorSrc;
+
+typedef enum _GXDiffuseFn {
+	GX_DF_NONE,
+	GX_DF_SIGN,
+	GX_DF_CLAMP
+} GXDiffuseFn;
+
+typedef enum _GXAttnFn {
+	GX_AF_SPEC,
+	GX_AF_SPOT,
+	GX_AF_NONE
+} GXAttnFn;
+
+typedef enum _GXIndTexStageID {
+	GX_INDTEXSTAGE0,
+	GX_INDTEXSTAGE1,
+	GX_INDTEXSTAGE2,
+	GX_INDTEXSTAGE3,
+	GX_MAX_INDTEXSTAGE
+} GXIndTexStageID;
+
+typedef enum _GXIndTexFormat {
+	GX_ITF_8,
+	GX_ITF_5,
+	GX_ITF_4,
+	GX_ITF_3,
+	GX_MAX_ITFORMAT
+} GXIndTexFormat;
+
+typedef enum _GXIndTexBiasSel {
+	GX_ITB_NONE,
+	GX_ITB_S,
+	GX_ITB_T,
+	GX_ITB_ST,
+	GX_ITB_U,
+	GX_ITB_SU,
+	GX_ITB_TU,
+	GX_ITB_STU,
+	GX_MAX_ITBIAS
+} GXIndTexBiasSel;
+
+typedef enum _GXIndTexMtxID {
+	GX_ITM_OFF,
+	GX_ITM_0,
+	GX_ITM_1,
+	GX_ITM_2,
+	GX_ITM_S0,
+	GX_ITM_S1,
+	GX_ITM_S2,
+	GX_ITM_T0,
+	GX_ITM_T1,
+	GX_ITM_T2
+} GXIndTexMtxID;
+
+typedef enum _GXIndTexWrap {
+	GX_ITW_OFF,
+	GX_ITW_256,
+	GX_ITW_128,
+	GX_ITW_64,
+	GX_ITW_32,
+	GX_ITW_16,
+	GX_ITW_0,
+	GX_MAX_ITWRAP
+} GXIndTexWrap;
+
+typedef enum _GXIndTexAlphaSel {
+	GX_ITBA_OFF,
+	GX_ITBA_S,
+	GX_ITBA_T,
+	GX_ITBA_U,
+	GX_MAX_ITBALPHA
+} GXIndTexAlphaSel;
+
+typedef enum _GXIndTexScale {
+	GX_ITS_1,
+	GX_ITS_2,
+	GX_ITS_4,
+	GX_ITS_8,
+	GX_ITS_16,
+	GX_ITS_32,
+	GX_ITS_64,
+	GX_ITS_128,
+	GX_ITS_256,
+	GX_MAX_ITSCALE
+} GXIndTexScale;
+
 void GXSetArray(GXAttr attr, const void* base_ptr, u8 stride);
 
 void GXInitLightColor(GXLightObj* lt_obj, GXColor color);
@@ -706,7 +812,7 @@ void GXSetChanAmbColor(GXChannelID chan, GXColor amb_color);
 void GXSetScissor(u32 xOrig, u32 yOrig, u32 wd, u32 ht);
 
 #ifdef __cplusplus
-};
-#endif // ifdef __cplusplus
+}
+#endif
 
 #endif

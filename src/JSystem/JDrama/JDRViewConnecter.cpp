@@ -3,7 +3,7 @@
 namespace JDrama {
 	
 template <typename T> inline TFlagT<T>::TFlagT(T flag) : flag(flag) {}
-inline TNameRef::TNameRef(const char* name) { this->mName = name; this->mKeyCode = calcKeyCode(name); }
+inline TNameRef::TNameRef(const char* name) { this->name = name; this->key_code = calcKeyCode(name); }
 inline TViewObj::TViewObj(const char* name) : TNameRef(name), unknown_0C(0) {}
 
 TViewConnecter::TViewConnecter(TViewObj* arg_0, TViewObj* arg_1, TFlagT<u16> arg_2, const char* name) 

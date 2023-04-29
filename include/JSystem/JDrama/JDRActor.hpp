@@ -14,7 +14,7 @@ class TActor : public TPlacement, public JStage::TActor {
 
 	virtual ~TActor() {}
 
-	virtual void* getType() const;
+	virtual s32 getType() const;
 	virtual void load(JSUMemoryInputStream&);
 	virtual void perform(u32, TGraphics*);
 

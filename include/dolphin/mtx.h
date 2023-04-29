@@ -12,6 +12,14 @@ extern "C" {
 typedef float Mtx[3][4];
 typedef float Mtx44[4][4];
 typedef float PSQuaternion[4];
+
+typedef struct Quaternion {
+	f32 x;
+	f32 y;
+	f32 z;
+	f32 w;
+} Quaternion;
+
 #define MTXDegToRad(a) ((a)*0.01745329252f)
 
 void PSMTXConcat(const Mtx, const Mtx, Mtx);

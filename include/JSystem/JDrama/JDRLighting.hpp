@@ -65,6 +65,8 @@ class TLightAry : public TViewObj {
 	public:
 
 	TLightAry(const char* name) : TViewObj(name) {}
+	
+	virtual ~TLightAry() {}
 
 	virtual void load(JSUMemoryInputStream&);
 	virtual TNameRef* searchF(u16, const char*);
@@ -72,8 +74,8 @@ class TLightAry : public TViewObj {
 
 	void setLightNum(s32 num_lights);
 
-	/* 0x10 */ TIdxLight* lights;
-	/* 0x14 */ s32 num_lights;
+	TIdxLight* lights;
+	s32 num_lights;
 
 };
 

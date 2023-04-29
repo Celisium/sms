@@ -74,7 +74,7 @@ O_FILES :=                                                            \
     $(BUILD_DIR)/asm/JSystem/JUTVideo.o                               \
     $(BUILD_DIR)/asm/JSystem/JUTResFont.o                             \
     $(BUILD_DIR)/asm/JSystem/JUTRomFont.o                             \
-    $(BUILD_DIR)/asm/JSystem/JRenderer.o                              \
+    $(BUILD_DIR)/src/JSystem/JRenderer.o                              \
     $(BUILD_DIR)/asm/JSystem/JUTConsole.o                             \
     $(BUILD_DIR)/asm/JSystem/JUTDirectFile.o                          \
     $(BUILD_DIR)/asm/JSystem/linklist.o                               \

@@ -12,26 +12,21 @@ class TNameRef {
 
 	public:
 
-	static u16 calcKeyCode(const char* str);
-	static const char* getType(JSUMemoryInputStream&, JSUMemoryInputStream&);
-	// TODO: Determine actual return type.
-	static void genObject(JSUMemoryInputStream&, JSUMemoryInputStream&);
+	TNameRef(const char* name);// : name(name), key_code(calcKeyCode(name)) {}
 
 	virtual ~TNameRef();
-	// TODO: Determine actual return type.
-	virtual void* getType() const;
+	virtual s32 getType() const;
 	virtual void load(JSUMemoryInputStream&);
 	virtual void save(JSUMemoryOutputStream&);
 	virtual void loadAfter();
 	virtual TNameRef* searchF(u16, const char*);
 
-	TNameRef() {}
-	TNameRef(const char* name);
+	static u16 calcKeyCode(const char* str);
+	static const char* getType(JSUMemoryInputStream&, JSUMemoryInputStream&);
+	static TNameRef* genObject(JSUMemoryInputStream&, JSUMemoryInputStream&);
 
-	private:
-
-	const char* mName;
-	u16 mKeyCode;
+	const char* name;
+	u16 key_code;
 };
 
 }

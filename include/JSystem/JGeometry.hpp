@@ -9,7 +9,11 @@ class TVec3 {
 	public:
 
 	TVec3();
-	TVec3(const TVec3&);
+	TVec3(const TVec3& other) {
+		this->x = other.x;
+		this->y = other.y;
+		this->z = other.z;
+	}
 
 	template <typename TY>
 	TVec3(TY x, TY y, TY z) {

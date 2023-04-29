@@ -1,0 +1,4 @@
+#ifndef JSYSTEM_J3D_J3DTYPES_H
+#define JSYSTEM_J3D_J3DTYPES_H
+
+#endif
